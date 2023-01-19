@@ -1,14 +1,32 @@
+
 .flex-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    background-color: Red;
+    background-color: lightgrey;
   }
   
   .flex-container > div {
     background-color: #f1f1f1;
     margin: 10px;
     padding: 20px;
-    font-size: 30px;
-    width: 20%;
+    width: 25%;
+    line-height: 2;
+  }
+
+  .col{
+    border-top: 0.3em solid black;
+    border-bottom: 0.3em solid black;
+  }
+
+  #left-col{
+    background-color: #BBA0CA;
+  }
+
+  #mid-col{
+    background-color: #FFF0A7;
+  }
+
+  #right-col{
+    background-color: #B5D8CC;
   }
