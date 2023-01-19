@@ -72,3 +72,23 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.pan {
+    width: 80%;
+    height: 45%;
+    margin: auto;
+    background: url('https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');
+    background-size: auto 100%;
+    border-radius: 50%;
+    animation: pan 10s linear infinite alternate;
+    animation-play-state: paused;
+  }
+  
+  .pan:focus,
+  .pan:hover {
+    animation-play-state: running;
+  }
+  
+  @keyframes pan {
+      to { background-position: 100% 0; }
+  }
