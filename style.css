@@ -4,7 +4,16 @@ header{
   align-items: center;
   width: 1100px;
   height: 250px;
-  border: 3px solid green;
+  border: 1px solid green;
+}
+
+.test{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66%;
+  height: 250px;
+  background-color: red;
 }
 
 body {
@@ -22,7 +31,7 @@ body {
   background-color: #f1f1f1;
   margin: 10px;
   padding: 20px;
-  width: 25%;
+  width: 20%;
   line-height: 2;
   border-top: 0.3em solid black;
   border-bottom: 0.3em solid black;
