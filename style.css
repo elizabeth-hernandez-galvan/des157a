@@ -71,7 +71,7 @@ body {
   
 .flex-container > div {
   background-color: #f1f1f1;
-  margin: 3% 1% 0;
+  margin: 3% 1% 2%;
   padding: 0.5% 1.5% 1%;
   width: 25%;
   line-height: 1.5;
@@ -144,7 +144,7 @@ svg {
 
 footer {
   width:100%;
-  position:absolute;
+  position:fixed;
   left:0;
   right: 0;
   bottom: 0; 
@@ -172,7 +172,49 @@ footer {
 
 /* Design For Mobile */
 @media screen and (max-width: 480px) {
+  .banner {
+    height: 200px;
+    margin: auto;
+    background-image: url("images/mobile.png");
+    background-size: cover;
+    background-color: #D9F0FA;
+    border-radius: 15% 0%;
+  }
+  .info {
+    line-height: 0.2;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-top: 2%;
+  }
+  #name {
+    text-indent: 0%;
+    text-align: center;
+    font-size: 20px;
+  }
+  #course, #year {
+    text-indent: 0%;
+    text-align: center;
+  }
   
+  .flex-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-container > div {
+    width: 90%;
+    line-height: 2;
+    flex: 1;
+    flex-basis: 370px;
+    padding-top: 5%
+  }
+  #right-col {
+    margin-bottom: 15%;
+  }
+  .foot {
+    margin-bottom: -3%;
+  }
 }
 
 /* Design For Tablet */
