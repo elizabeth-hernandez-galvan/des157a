@@ -12,6 +12,8 @@
   height: 250px;
   margin: auto;
   background-image: url("images/banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #D9F0FA;
 }
 
@@ -219,10 +221,18 @@ footer {
 
 /* Design For Tablet */
 @media screen and (max-width: 768) {
-  
+  .banner {
+    height: 200px;
+    background-image: url("images/tablet.png");
+    border-radius: 0%;
+  }
 }
 
 /* Design For Laptop */
 @media screen and (max-width: 1024px) {
-  
+  .banner {
+    height: 200px;
+    background-image: url("images/laptop.png");
+    border-radius: 0%;
+  }
 }
