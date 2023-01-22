@@ -7,7 +7,7 @@
   flex-flow: column wrap;
   justify-content: center;
   line-height: 0;
-  width: 80%;
+  width: 90%;
   height: 250px;
   margin: auto;
   background-image: url("images/banner.png");
@@ -74,7 +74,7 @@ body {
   background-color: #f1f1f1;
   margin: 1%;
   padding: 1.5%;
-  width: 20%;
+  width: 25%;
   line-height: 2;
   border-top: 0.3em solid black;
   border-bottom: 0.3em solid black;
@@ -118,7 +118,7 @@ i{
     background: url('https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');
     background-size: auto 100%;
     border-radius: 50%;
-    animation: pan 10s linear infinite alternate;
+    animation: pan 3s linear infinite alternate;
     animation-play-state: paused;
   }
   
