@@ -2,13 +2,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 
-.test{
+.banner{
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
-  width: 66%;
+  line-height: 0;
+  width: 80%;
   height: 250px;
   margin: auto;
+  background-image: url("images/banner.png");
+  background-color: #D9F0FA;
+}
+
+.info {
+  line-height: 0.6;
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  padding-top: 5%;
+}
+
+#name {
+  text-indent: 30%;
+  font-size: 40px;
+}
+#course {
+  text-indent: 40%;
+}
+
+#year { 
+  text-indent: 55%;
 }
 
 .bannerBg {
@@ -17,7 +39,7 @@
 
 h2{
   font-family: 'Lobster', cursive;
-  font-size: 2.3em;
+  font-size: 2em;
 }
 
 
@@ -52,7 +74,7 @@ body {
   background-color: #f1f1f1;
   margin: 1%;
   padding: 1.5%;
-  width: 25%;
+  width: 20%;
   line-height: 2;
   border-top: 0.3em solid black;
   border-bottom: 0.3em solid black;
