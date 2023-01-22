@@ -15,13 +15,13 @@
 
         for (var num = 1; num <= 100; num ++){ //all nums between 1 and 100
             
-            var modThree = num % 3 == 0; //nums divisible by 3
-            var modFive = num % 5 == 0;  //nums divisible by 5
+            var modThree = num % 3; //nums divisible by 3
+            var modFive = num % 5;  //nums divisible by 5
             
             
-            if (modThree)
+            if (modThree == 0)
                 console.log("Fizz");
-            else if (modFive)
+            else if (modFive == 0)
                 console.log("Buzz");
             else
                 console.log(num);
