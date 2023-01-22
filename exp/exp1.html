@@ -11,7 +11,22 @@
     <h2>Open the console to see the functionality of my code</h2>
 
     <script>
-        /*Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.*/
+
+        console.log("Write a program that takes a lowercase string and capitalizes the first letter of each word in the string.");
+
+        var sentence = "this is a string";
+        console.log(sentence);
+
+        var words = sentence.split(" ");
+
+        for (var i = 0; i < words.length; i++) {
+            words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+        }
+        console.log( words.join(" "));
+
+        console.log("\n");
+        
+        console.log('Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.');
 
         for (var num = 1; num <= 100; num ++){ //all nums between 1 and 100
             
