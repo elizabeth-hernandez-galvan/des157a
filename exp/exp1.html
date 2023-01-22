@@ -15,14 +15,14 @@
         console.log("Write a program that takes a lowercase string and capitalizes the first letter of each word in the string.");
 
         var sentence = "this is a string";
-        console.log(sentence);
+        console.log("Original: " + sentence);
 
         var words = sentence.split(" ");    //breaks up sentence into words
 
         for (var i = 0; i < words.length; i++) {    //loops through each letter within each word
             words[i] = words[i][0].toUpperCase() + words[i].substr(1);      //loops to index 0 (1st letter) and changes from lower case to capital and returns copy of new changes
         }
-        console.log( words.join(" "));  //prints updated sentence
+        console.log("Result: " + words.join(" "));  //prints updated sentence
 
 
 
