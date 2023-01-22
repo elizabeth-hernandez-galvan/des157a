@@ -84,6 +84,16 @@ a {
   color: black;
 }
 
+.menuItem{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  line-height: 0;
+}
+
+i{
+  transform: translate(-70%, 50%);
+}
 .pan {
     width: 80%;
     height: 45%;
@@ -103,3 +113,23 @@ a {
   @keyframes pan {
       to { background-position: 100% 0; }
   }
+
+  footer{
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .left{
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .right {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: right;
+    line-height: 0;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
