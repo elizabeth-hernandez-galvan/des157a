@@ -17,15 +17,17 @@
         var sentence = "this is a string";
         console.log(sentence);
 
-        var words = sentence.split(" ");
+        var words = sentence.split(" ");    //breaks up sentence into words
 
-        for (var i = 0; i < words.length; i++) {
-            words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+        for (var i = 0; i < words.length; i++) {    //loops through each letter within each word
+            words[i] = words[i][0].toUpperCase() + words[i].substr(1);      //loops to index 0 (1st letter) and changes from lower case to capital and returns copy of new changes
         }
-        console.log( words.join(" "));
+        console.log( words.join(" "));  //prints updated sentence
+
+
 
         console.log("\n");
-        
+
         console.log('Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.');
 
         for (var num = 1; num <= 100; num ++){ //all nums between 1 and 100
@@ -41,6 +43,17 @@
             else
                 console.log(num);
         }
+
+
+
+        console.log("\n");
+        
+        console.log('Write a loop that makes seven calls to console.log to output the following triangle:');
+        
+        for (var draw = "#"; draw.length < 8; draw += "#"){     //declare the # symbol and loop 7 times adding 1 more symbol each time
+            console.log(draw);  //final drawing
+        }
+
     </script>
 </body>
 </html>
