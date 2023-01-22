@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+/* Design for Desktop 1200px x 750px */
 
 .banner {
   display: flex;
@@ -168,4 +169,18 @@ footer {
   flex-flow: row wrap;
   line-height: 0;
 }
+
+/* Design For Mobile */
+@media screen and (max-width: 480px) {
   
+}
+
+/* Design For Tablet */
+@media screen and (max-width: 768) {
+  
+}
+
+/* Design For Laptop */
+@media screen and (max-width: 1024px) {
+  
+}
