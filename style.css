@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 
-.banner{
+.banner {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -39,10 +39,8 @@
 
 h2{
   font-family: 'Lobster', cursive;
-  font-size: 2em;
+  font-size: 1.7em;
 }
-
-
 
 body {
   margin: 5%;
@@ -75,7 +73,7 @@ body {
   margin: 1%;
   padding: 1.5%;
   width: 25%;
-  line-height: 2;
+  line-height: 1.5;
   border-top: 0.3em solid black;
   border-bottom: 0.3em solid black;
 }
@@ -94,6 +92,7 @@ body {
 
 ul {
   list-style-type: circle;
+  font-size: 1.2em;
 }
 
 a {
@@ -101,14 +100,14 @@ a {
   color: black;
 }
 
-.menuItem{
+.menuItem {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   line-height: 0;
 }
 
-i{
+i {
   transform: translate(-70%, 50%);
 }
 .pan {
@@ -131,9 +130,12 @@ i{
       to { background-position: 100% 0; }
   }
 
-  footer{
+.foot {
+    background-color: white;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
   }
   
   .left{
@@ -144,9 +146,6 @@ i{
   .right {
     display: flex;
     flex-flow: row wrap;
-    justify-content: right;
     line-height: 0;
-    margin-left: auto;
-    margin-right: 0;
   }
   
