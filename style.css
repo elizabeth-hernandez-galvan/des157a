@@ -217,6 +217,24 @@ footer {
   line-height: 0;
 }
 
+/* Design For Laptop */
+@media screen and (max-width: 1024px) {
+  .banner {
+    height: 200px;
+    background-image: url("images/laptop.png");
+    border-radius: 0%;
+  }
+}
+
+/* Design For Tablet */
+@media screen and (max-width: 768) {
+  .banner {
+    height: 200px;
+    background-image: url("images/tablet.png");
+    border-radius: 0%;
+  }
+}
+
 /* Design For Mobile */
 @media screen and (max-width: 480px) {
   .banner {
@@ -261,23 +279,5 @@ footer {
   }
   .foot {
     margin-bottom: -3%;
-  }
-}
-
-/* Design For Tablet */
-@media screen and (max-width: 768) {
-  .banner {
-    height: 200px;
-    background-image: url("images/tablet.png");
-    border-radius: 0%;
-  }
-}
-
-/* Design For Laptop */
-@media screen and (max-width: 1024px) {
-  .banner {
-    height: 200px;
-    background-image: url("images/laptop.png");
-    border-radius: 0%;
   }
 }
