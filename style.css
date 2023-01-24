@@ -218,20 +218,72 @@ footer {
 }
 
 /* Design For Laptop */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px)  and (min-width: 769px) {
   .banner {
     height: 200px;
     background-image: url("images/laptop.png");
     border-radius: 0%;
   }
+
+  .menuItem {
+    font-size: 12px;
+  }
+
+  .flex-container > div {
+    margin: 5% 1% 1%;
+    padding: 3% 1.5% 2%;
+    font-size: 12px;
+  }
+
 }
 
 /* Design For Tablet */
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) and (min-width: 481px) {
   .banner {
     height: 200px;
     background-image: url("images/tablet.png");
     border-radius: 0%;
+  }
+
+  .info {
+    line-height: 0.6;
+    font-size: 20px;
+    padding-top: 2%;
+  }
+
+  #name {
+    font-size: 35px;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-container > div {
+    width: 80%;
+    line-height: 2;
+    flex: 1;
+    flex-basis: 500px;
+    margin: 5% 0% 1%;
+    padding: 5% 1.5% 4%;
+    font-size: 20px;
+  }
+
+  .menuItem {
+    font-size: 30px;
+  }
+
+  #left-col > ul, #mid-col > ul, #right-col > ul {
+    font-size: 25px;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  #right-col {
+    margin-bottom: 15%;
   }
 }
 
@@ -248,8 +300,8 @@ footer {
   .info {
     line-height: 0.2;
     font-size: 15px;
-    line-height: 1.5;
-    padding-top: 2%;
+    /* line-height: 1.5;
+    padding-top: 2%; */
   }
   #name {
     text-indent: 0%;
