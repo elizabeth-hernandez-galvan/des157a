@@ -85,12 +85,24 @@ body {
   background-color: #BBA0CA;
 }
 
+#left-col > .menuItem {
+  color: #800080;
+}
+
 #mid-col {
   background-color: #FFF0A7;
 }
 
+#mid-col > .menuItem {
+  color: #cc9900;
+}
+
 #right-col {
   background-color: #B5D8CC;
+}
+
+#right-col > .menuItem {
+  color: #006600;
 }
 
 ul {
@@ -102,6 +114,38 @@ ul {
 a {
   text-decoration: none;
   color: black;
+}
+
+#left-col > ul > a{
+  box-shadow: inset 0 0 0 0 black;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+#left-col  > ul > a:hover {
+  /* color: #F3DFC1; */
+  color: #800080;
+  box-shadow: inset 200px 0 0 0 black;
+}
+
+#mid-col > ul > a{
+  box-shadow: inset 0 0 0 0 black;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+#mid-col  > ul > a:hover {
+  /* color: #947EB0; */
+  color: #cc9900;
+  box-shadow: inset 200px 0 0 0 black;
+}
+
+#right-col > ul > a{
+  box-shadow: inset 0 0 0 0 black;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+#right-col  > ul > a:hover {
+  color: #006600;
+  box-shadow: inset 200px 0 0 0 black;
 }
 
 .menuItem {
