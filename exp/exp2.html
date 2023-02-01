@@ -9,6 +9,7 @@
 <body>
     <h1>Experiment 2</h1>
     <h2>Let's play a Guessing Game!</h2>
+    <h2>Check the console to see your results!</h2>
 
     <script>
         
@@ -21,7 +22,7 @@
                 num = prompt(`Sorry, try again! This is your ${i} guess. Guess a number between 1 and 10:`);
                 i++;
             }
-            console.log(`You took ${i} tries!`);
+            console.log(`You guessed the correct number, it took you ${i} tries!`);
         }
 
         guessNum();
