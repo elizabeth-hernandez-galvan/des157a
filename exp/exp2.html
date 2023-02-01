@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <h2>Let's play a Guessing Game!</h2>
+
+    <script>
+        
+        function guessNum(){
+            var num = prompt('Guess a number between 1 and 10:');
+            var rand = Math.floor(Math.random() * 10) + 1;
+
+            var i = 1;
+            while(num != rand){
+                num = prompt(`Sorry, try again! This is your ${i} guess. Guess a number between 1 and 10:`);
+                i++;
+            }
+            console.log(`You took ${i} tries!`);
+            //console.log(`Congrats, you guessed the correct number but you took ${i}.`);
+
+            // for(var i = 1; num != rand; i++){
+            //     num = prompt(`Sorry, try again! This is your ${i} guess. Guess a number between 1 and 10:`);
+            // }
+
+            
+            // if(number == random) {
+            //     console.log('You guessed the correct number.');
+            // }
+        }
+
+        guessNum();
+
+    </script>
+</body>
+</html>
