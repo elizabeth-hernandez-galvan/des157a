@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+input[type="text"]:focus {
+    border:1px solid #D6D9DC;
+    outline: 0;
+    margin: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+main {
+    height: 20rem;
+    background-color: aquamarine;
+    margin: 0% 20%;
+    padding: 2%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Special Elite', cursive;
+}
+
+button {
+    background-color: black;
+    border: none;
+    display: inline-block;
+    padding: 1% 1%;
+    margin: 5px;
+    font-size: 16px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 48px;
+}
+
+.delete, .shift, .space {
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.delete { 
+    width: 100px; 
+}
+
+.shift { 
+    width: 70px; 
+}
+
+.space { 
+    width: 400px; 
+}
