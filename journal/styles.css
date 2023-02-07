@@ -1,0 +1,52 @@
+
+
+body{
+    font-family: 'Droid Serif', serif;
+    font-size: 14px;
+    color: #2f2f2f;
+    margin-top: 2%;
+}
+
+header{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 5rem;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 5rem;
+    margin-bottom: 1rem;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.head{
+    text-align: center;
+    position: relative;
+}
+
+.headline{
+    font-size: 1.5rem;
+}
+
+.col {
+    margin-top: 5%;
+}
+
+.subhead{
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 0;
+}
+
+.content {
+    column-count: 3;
+    column-rule: 2px solid black;
+    column-gap: 3rem;
+    margin: 2rem 3rem 1rem;
+    text-align: justify;
+    hyphens: auto;
+}
