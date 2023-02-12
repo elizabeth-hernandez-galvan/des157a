@@ -1,5 +1,39 @@
 
+//Form
+const view = Array.from(document.querySelectorAll("form .view"));
+const nextBtn = document.querySelectorAll("form .next");
+const prevBtn = document.querySelectorAll("form .previous");
+const form = document.querySelector("form");
 
+
+nextBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+        flipPage("next");
+    });
+});
+prevBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+        flipPage("prev");
+    });
+});
+
+function flipPage(btn) {
+    let i = 0;
+    const active = document.querySelector(".active");
+    i = view.indexOf(active);
+
+    view[i].classList.remove("active");
+    if (btn === "next") {
+      i++;
+    } else if (btn === "prev") {
+      i--;
+    }
+    view[i].classList.add("active");
+}
+  
+
+
+//Keyboard
 const btns = document.querySelectorAll('.btn');
 const delete_btn = document.querySelector('.delete');
 const shift_btn = document.querySelector('.shift');
@@ -27,8 +61,9 @@ space_btn.addEventListener('click', () => {
     console.log(list);
 })
 
+//Change to uppercase
 shift_btn.addEventListener('click', () => {
-    btns.forEach(btn => {
+    btns.forEach(btns => {
         btns.classList.toggle('upper');
     })
 })
