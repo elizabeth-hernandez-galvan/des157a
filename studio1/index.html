@@ -29,26 +29,6 @@
                 <p>When you're ready, get started below!</p>
                 <button type="button" class="next">Start &raquo;</button>
             </div>
-
-            <div class="view pg-2">
-                <div class="task">
-                    <label>Shakespear Favorite:</label>
-                </div>
-                <div class="task">
-                    <input type="radio" id="romeo" required>
-                    <label for="romeo">Romeo and Juliet</label>
-                </div>
-                <div class="task">
-                    <input type="radio" id="to-be" required>
-                    <label for="to-be">To be, or not to be</label>
-                </div>
-                <div class="task">
-                    <input type="radio" id="midsummer" required>
-                    <label for="midsummer">A Midsummer Night's Dream</label>
-                </div>
-                <button type="button" class="previous">&laquo; Previous</button>
-                <button type="button" class="next">Next &raquo;</button>
-            </div>
             
             <div class="view pg-2">
                 <div class="choice">
@@ -60,18 +40,36 @@
                     <input type="text" id="sVerb" required>
                 </div>
                 <div class="choice">
-                    <label for="fAdj">Adjective:</label>
-                    <input type="text" id="fAdj" required>
+                    <label for="zNoun">Noun:</label>
+                    <input type="text" id="zNoun" required>
                 </div>
                 <div class="choice">
                     <label for="pNoun">Noun(Plural):</label>
                     <input type="text" id="pNoun" required>
                 </div>
-                <div class="choice">
-                    <label for="sAdj">Adjective:</label>
-                    <input type="text" id="sAdj" required>
-                </div>
+                
+                <button type="button" class="previous">&laquo; Previous</button>
+                <button type="button" class="next">Next &raquo;</button>
+            </div>
 
+            <div class="view pg-2">
+                <div class="choice">
+                    <label for="fNoun">Noun:</label>
+                    <input type="text" id="fNoun" required>
+                </div>
+                 <div class="choice">
+                    <label for="fVerb">Verb:</label>
+                    <input type="text" id="fVerb" required>
+                </div>
+                <div class="choice">
+                    <label for="num">Number:</label>
+                    <input type="text" id="num" required>
+                </div>
+                <div class="choice">
+                    <label for="zVerb">Noun(Plural):</label>
+                    <input type="text" id="zVerb" required>
+                </div>
+                
                 <div id="madlibs-submit">
                     <button type="button" class="previous">&laquo; Previous</button>
                     <button type="submit" id="submit">Submit</button>
@@ -79,10 +77,29 @@
             </div>
         </form>
         
-        <!-- <div id="output" class="container">
-            <h2>Your madlib:</h2>
-            <article id="madlib"></article>
-        </div> -->
+        <div class="hidden" id="overlay">
+            <div id="madlib">
+
+                    <p>
+                        Two households, both alike in dignity
+                        (In fair <span id=madlib1>${noun1}</span>, where we lay our scene),
+                        From ancient grudge break to new mutiny,
+                        Where civil blood  <span id=madlib2>${verb1}</span> civil hands unclean.
+                        From forth the fatal loins of these two foes
+                        A pair of star-crossed  <span id=madlib3>${pNoun1}</span> take their life;
+                        Whose misadventured piteous overthrows
+                        Doth with their death <span id=madlib4>${verb2}</span> their parents’ strife.
+                        The fearful <span id=madlib5>${noun2}</span> of their death-marked love
+                        And the continuance of their parents’ rage,
+                        Which, but their <span id=madlib6>${noun3}</span>’s end, naught could remove,
+                        Is now the <span id=madlib7>${num1</span> hours’ traffic of our stage;
+                        The which, if you with patient ears attend,
+                        What here shall miss, our toil shall <span id=madlib8>${verb3}</span> to mend.
+                    </p>
+                    
+            </div>
+                    <button type="button" id="tryAgain"><span id="try-again-text"> tryAgain </span></button>
+        </div>
         
     </div>
     </main>

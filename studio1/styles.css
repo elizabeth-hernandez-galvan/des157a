@@ -77,6 +77,20 @@ a:hover {
     width: 6em;
 }
 
+#tryAgain {
+    background-color: lightblue;
+    color: black;
+    border-radius: 0.5em;
+    width: 6em;
+}
+
+#newSec {
+    margin: 0px 28%;
+    text-align: center;
+    line-height: 1.3em;
+    padding: 1.1em;
+}
+
 .keyboard {
     display: flex;
     flex-direction: column;

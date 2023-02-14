@@ -1,44 +1,62 @@
+console.log('reading js');
+'use strict';
 
+/*
+document.querySelector('form').addEventListener('submit', myForm);
+document.querySelector('#reset').addEventListener('click', reset);
+
+function myForm(event) {
+
+    const noun1 = document.querySelector("#sNoun").value;
+    const verb1 = document.querySelector("#sVerb").value;
+    const noun2 = document.querySelector("#zNoun").value;
+    const pNoun1 = document.querySelector("#pNoun").value;
+    const noun3 = document.querySelector("#fNoun").value;
+    const verb2 = document.querySelector("#fVerb").value;
+    const num1 = document.querySelector("#num").value;
+    const verb3 = document.querySelector("#zVerb").value;
+
+    //initiate new section
+    var newSec = document.querySelector('#newSec');
+    
+    //message section
+    var message = document.querySelector('#output');
+    var h2 = document.querySelector('h2');
+    
+    //concatenate message
+    h2.innerHTML = 'Writting in Progress';
+    newSec.innerHTML = 
+            `Two households, both alike in dignity
+            (In fair ${noun1}, where we lay our scene),
+            From ancient grudge break to new mutiny,
+            Where civil blood ${verb1} civil hands unclean.
+            From forth the fatal loins of these two foes
+            A pair of star-crossed  ${pNoun1} take their life;
+            Whose misadventured piteous overthrows
+            Doth with their death  ${verb2} their parents’ strife.
+            The fearful ${noun2} of their death-marked love
+            And the continuance of their parents’ rage,
+            Which, but their ${noun3}’s end, naught could remove,
+            Is now the ${num1} hours’ traffic of our stage;
+            The which, if you with patient ears attend,
+            What here shall miss, our toil shall  ${verb3} to mend.`
+
+    //New Section styling
+    newSec.className = 'show';
+
+    event.preventDefault();
+    return false;
+}
+ 
+function reset(){
+    newSec.className = 'hide';
+}
+*/
 //Form
 const view = Array.from(document.querySelectorAll("form .view"));
 const nextBtn = document.querySelectorAll("form .next");
 const prevBtn = document.querySelectorAll("form .previous");
 const form = document.querySelector("form");
-
-
-// myForm.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//         // const task1 = document.querySelector("#romeo").value;
-//         // const task2 = document.querySelector("#to-be").value;
-//         // const task3 = document.querySelector("#midsummer").value;
-//     const noun1 = document.querySelector("#sNoun").value;
-//     const verb1 = document.querySelector("#sVerb").value;
-//     const noun2 = document.querySelector("#zNoun").value;
-//     const pNoun1 = document.querySelector("#pNoun").value;
-//     const noun3 = document.querySelector("#fNoun").value;
-//     const verb2 = document.querySelector("#fVerb").value;
-//     const num1 = document.querySelector("#num").value;
-//     const verb3 = document.querySelector("#zVerb").value;
-    
-//     for (let field of document.querySelectorAll("input[type=text]"))
-//         field.value = "";
-    
-//     let text = `Two households, both alike in dignity
-//         (In fair ${noun1}, where we lay our scene),
-//         From ancient grudge break to new mutiny,
-//         Where civil blood ${verb1} civil hands unclean.
-//         From forth the fatal loins of these two foes
-//         A pair of star-crossed  ${pNoun1} take their life;
-//         Whose misadventured piteous overthrows
-//         Doth with their death  ${verb2} their parents’ strife.
-//         The fearful ${noun2} of their death-marked love
-//         And the continuance of their parents’ rage,
-//         Which, but their ${noun3}’s end, naught could remove,
-//         Is now the ${num1} hours’ traffic of our stage;
-//         The which, if you with patient ears attend,
-//         What here shall miss, our toil shall  ${verb3} to mend.`
-//         madlib.innerHTML = text;
-// }
 
 nextBtn.forEach((button) => {
     button.addEventListener("click", () => {
