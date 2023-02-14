@@ -3,10 +3,7 @@
     'use strict';
 
     const myForm = document.querySelector("#madlibs-form");
-/*
-document.querySelector('form').addEventListener('submit', myForm);
-document.querySelector('#reset').addEventListener('click', reset);
-*/
+
     myForm.addEventListener('submit', function(event){
         event.preventDefault();
         const noun1 = document.querySelector("#sNoun").value;
@@ -17,6 +14,50 @@ document.querySelector('#reset').addEventListener('click', reset);
         const verb2 = document.querySelector("#fVerb").value;
         const num1 = document.querySelector("#num").value;
         const verb3 = document.querySelector("#zVerb").value;
+
+        let myText;
+
+        if(noun1 == ''){
+            myText = "Please provide a noun"
+            noun1.focus();
+        }
+        else if(verb1 == ''){
+            myText = "Please provide verb"
+            verb2.focus();
+        }
+        else if(noun2 == ''){
+            myText = "Please provide another noun"
+            noun2.focus();
+        }
+        else if(pNoun1 == ''){
+            myText = "Please provide a plural noun"
+            pNoun1.focus();
+        }
+        else if(noun3 == ''){
+            myText = "Please provide a noun"
+            noun3.focus();
+        }
+        else if(verb2 == ''){
+            myText = "Please provide a verb"
+            verb2.focus();
+        }
+        else if(num1 == ''){
+            myText = "Please provide a number"
+            num1.focus();
+        }
+        else {
+            myText = "Please provide another verb"
+            verb3.focus();
+        }
+
+        document.getElementById('madlib1').innerText=`${noun1}`;
+        document.getElementById('madlib2').innerText=`${verb1}`;
+        document.getElementById('madlib3').innerText=`${noun2}`;
+        document.getElementById('madlib4').innerText=`${pNoun1}`;
+        document.getElementById('madlib5').innerText=`${noun3}`;
+        document.getElementById('madlib6').innerText=`${verb2}`;
+        document.getElementById('madlib7').innerText=`${num1}`;
+        document.getElementById('madlib8').innerText=`${verb3}`;
         
     });
  
@@ -24,7 +65,6 @@ document.querySelector('#reset').addEventListener('click', reset);
     const view = Array.from(document.querySelectorAll("form .view"));
     const nextBtn = document.querySelectorAll("form .next");
     const prevBtn = document.querySelectorAll("form .previous");
-    const form = document.querySelector("form");
 
     nextBtn.forEach((button) => {
         button.addEventListener("click", () => {

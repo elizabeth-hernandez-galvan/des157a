@@ -61,6 +61,17 @@ a:hover {
     line-height: 1.5;
 }
 
+.pg-4 > p{
+    line-height: 2;
+}
+
+span {
+    color: purple;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: purple wavy underline;
+}
+
 .previous {
     background-color: white;
     color: black;
