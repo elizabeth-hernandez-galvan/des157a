@@ -185,7 +185,7 @@ button {
 
 @media screen and (max-width: 480px) {
     .keyboard {
-        display: flex wrap;
+        display: flex;
         width: 450px;
         height: auto;
         flex-direction: column;

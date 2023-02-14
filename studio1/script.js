@@ -47,7 +47,7 @@
         }
         else {
             myText = "Please provide another verb"
-            verb3.focus();
+            
         }
 
         document.getElementById('madlib1').innerText=`${noun1}`;
