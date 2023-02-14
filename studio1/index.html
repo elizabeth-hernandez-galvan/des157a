@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome!</h1>
+        <h1>Mad Libs Shakespeare Edition!</h1>
     </header>
 
     <main>
@@ -27,7 +27,7 @@
                 <p>Player 1: Asks the other players to fill in the blanks with adjectives, nouns, exclamations, colors, adjectives, and more! (Note the computer is player 1)</p>
                 <p>Player 2: Choose your prompt and fill in the blanks (Note you are player 2)</p>
                 <p>When you're ready, get started below!</p>
-                <button type="button" class="next">Start &raquo;</button>
+                <button type="button" class="next start">Start &raquo;</button>
             </div>
             
             <div class="view pg-2">
@@ -52,7 +52,7 @@
                 <button type="button" class="next">Next &raquo;</button>
             </div>
 
-            <div class="view pg-2">
+            <div class="view pg-3">
                 <div class="choice">
                     <label for="fNoun">Noun:</label>
                     <input type="text" id="fNoun" required>
@@ -75,11 +75,18 @@
                     <button type="submit" id="submit">Submit</button>
                 </div>
             </div>
+
+            <div class="circles">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+
         </form>
         
-        <div class="hidden" id="overlay">
+        <div>
             <div id="madlib">
-
+<!-- 
                     <p>
                         Two households, both alike in dignity
                         (In fair <span id=madlib1>${noun1}</span>, where we lay our scene),
@@ -96,14 +103,15 @@
                         The which, if you with patient ears attend,
                         What here shall miss, our toil shall <span id=madlib8>${verb3}</span> to mend.
                     </p>
-                    
+                     -->
             </div>
-                    <button type="button" id="tryAgain"><span id="try-again-text"> tryAgain </span></button>
+                    <!-- <button type="button" id="tryAgain"><span id="try-again-text"> tryAgain </span></button> -->
         </div>
         
     </div>
     </main>
 
+    <div class="keyImg">
     <div class="keyboard">
 
         <div class="row">
@@ -160,6 +168,7 @@
             <button class="space">Space</button>
         </div>
 
+    </div>
     </div>
     
 </body>

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
-
+header {
+    text-align: center;
+}
 
 main {
     height: 20rem;
-    background-color: aquamarine;
     padding: 2%;
     display:flex;
     flex-direction: column;
@@ -27,9 +28,9 @@ a:hover {
     width: 50em;
     padding: 2em;
     margin-bottom: 5em;
-    box-shadow: 0 0 1.25em white;
+    box-shadow: 0 0 1.25em #DDC216;
     border-radius: 0.5em;
-    background-color: lightskyblue;
+    background-color: #FFF9D2;
 }
 
 .choice {
@@ -39,8 +40,8 @@ a:hover {
 
 .choice input {
     width: 100%;
-    border: 0.09em solid white;
-    background-color: lightblue;
+    border: 0.09em solid #DDC216;
+    background-color: white;
     padding: 0.31em;
     font-size: 1.125em;
     margin-top: 0.31em;
@@ -56,45 +57,88 @@ a:hover {
     display: block;
 }
 
+.pg-1 > p{
+    line-height: 1.5;
+}
+
 .previous {
     background-color: white;
     color: black;
     border-radius: 0.5em;
+    border: solid black 0.1em;
     width: 6em;
+    margin-top: 2em;
 }
 
 .next {
-    background-color: lightblue;
-    color: black;
+    background-color: black;
+    color: white;
     border-radius: 0.5em;
+    border: solid black 0.1em;
     width: 6em;
+    margin-top: 2em;
+    transform: translateX(600%);
+}
+
+.start {
+    margin-top: 1em;
+    transform: translateX(360%);
 }
 
 #submit {
-    background-color: lightblue;
-    color: black;
+    background-color: black;
+    color: white;
     border-radius: 0.5em;
+    border: solid black 0.1em;
     width: 6em;
+    transform: translateX(600%);
 }
 
 #tryAgain {
-    background-color: lightblue;
+    background-color: #DDC216;
     color: black;
     border-radius: 0.5em;
     width: 6em;
 }
 
-#newSec {
-    margin: 0px 28%;
-    text-align: center;
-    line-height: 1.3em;
-    padding: 1.1em;
+.circles{
+    display: flex;
+    justify-content: center;
 }
 
+.step {
+    height: 1em;
+    width: 1em;
+    margin: 0 0.5em;
+    background-color: #DDC216;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.6;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+input.invalid {
+    background-color: lightcoral;
+}
+
+.keyImg {
+    background-image: url("images/type.svg");
+    background-color: white;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0;
+    height: 300px;
+}
 .keyboard {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateY(35%);
     font-family: 'Special Elite', cursive;
 }
 
@@ -102,13 +146,13 @@ button {
     background-color: black;
     border: none;
     display: inline-block;
-    padding: 1% 1%;
-    margin: 0.31em;
+    padding: 0.5% 0.5%;
+    margin: 0.1em;
     font-size: 1em;
     color: #fff;
-    width: 3.125em;
-    height: 3.125em;
-    border-radius: 3em;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 2em;
 }
 
 .delete, .shift, .space {
