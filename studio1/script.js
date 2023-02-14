@@ -45,8 +45,12 @@
             myText = "Please provide a number"
             num1.focus();
         }
+        else if(verb3 == ''){
+            myText = "Please provide a number"
+            verb3.focus();
+        }
         else {
-            myText = "Please provide another verb"
+            myText = "All Done"
             
         }
 
