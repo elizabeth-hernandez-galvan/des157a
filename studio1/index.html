@@ -19,8 +19,8 @@
     </header>
 
     <main>
-        <div class="container">
-        <form>
+        <div id="input" class="container">
+        <form id="madlibs-form">
             <div class="view pg-1 active">
                 <h1>New to Mad Libs?</h1>
                 <h3>Get Started Here! Write your own story!</h3>
@@ -71,11 +71,20 @@
                     <label for="sAdj">Adjective:</label>
                     <input type="text" id="sAdj" required>
                 </div>
-                <button type="button" class="previous">&laquo; Previous</button>
-                <button type="button" class="next">Next &raquo;</button>
+
+                <div id="madlibs-submit">
+                    <button type="button" class="previous">&laquo; Previous</button>
+                    <button type="submit" id="submit">Submit</button>
+                </div>
             </div>
         </form>
-        </div>
+        
+        <!-- <div id="output" class="container">
+            <h2>Your madlib:</h2>
+            <article id="madlib"></article>
+        </div> -->
+        
+    </div>
     </main>
 
     <div class="keyboard">

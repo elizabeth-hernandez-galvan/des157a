@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-/*
-input[type="text"]:focus {
-    border:1px solid #D6D9DC;
-    outline: 0;
-    margin: 0;
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}*/
+
+
 
 main {
     height: 20rem;
@@ -30,8 +24,9 @@ a:hover {
 }
 
 .container {
-    max-width: 25em;
+    width: 50em;
     padding: 2em;
+    margin-bottom: 5em;
     box-shadow: 0 0 1.25em white;
     border-radius: 0.5em;
     background-color: lightskyblue;
@@ -75,6 +70,13 @@ a:hover {
     width: 6em;
 }
 
+#submit {
+    background-color: lightblue;
+    color: black;
+    border-radius: 0.5em;
+    width: 6em;
+}
+
 .keyboard {
     display: flex;
     flex-direction: column;
@@ -110,4 +112,15 @@ button {
 
 .space { 
     width: 25em; 
+}
+
+@media screen and (max-width: 480px) {
+    .keyboard {
+        display: flex wrap;
+        width: 450px;
+        height: auto;
+        flex-direction: column;
+        margin: 0.1em;
+        font: 10px arial;
+      }
 }
