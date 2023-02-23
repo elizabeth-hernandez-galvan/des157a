@@ -70,7 +70,7 @@ section {
 	margin-top: 20px;
 	margin-bottom: 10px;
 	filter: grayscale(100%);
-	border: 1px solid #ddd;
+	border: 2px dotted grey;
 	object-fit: cover;
 }
 

@@ -3,12 +3,13 @@
 
 	const captions = [
 		'',
-		'1. Santa Rosa',
-		'2. Yosemite',
-		'3. Sacramento',
+		'1. Santa Rosa, CA',
+		'2. Yosemite, CA',
+		'3. Sacramento, CA',
 		'4. Florida',
 		'5. New York',
-		'6. Reno'];
+		'6. Nevada',
+		'7. Spain'];
 
 	let figCaption = document.querySelector('figcaption');
 
