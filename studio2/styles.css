@@ -1,15 +1,31 @@
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
 	font-family: Arial;
 	color: #333;
+	padding:0;
+	margin:0;
+	background-color:lightcoral;
 }
 
 main {
 	width: 30vw;
-	padding: 20px;
+	padding:0;
+	margin:0;
+	/* padding: 20px; */
+}
+
+article{
+	display: flex;
+	width: 40vw;
+	align-items: center;
+	justify-content: center;
+	margin:0;
+	padding:0;
 }
 
 section {
@@ -17,6 +33,26 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	padding:0;
+	margin:0;
+}
+
+.polaroid {
+	background-color: white;
+	padding: 1rem;
+	box-shadow: 0 0.2rem 1.2rem rgba(1,51,64,1);
+	height: 30rem;
+	width: 35vw;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.polaroid > img{
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+	filter: grayscale(100%);
 }
 
 p {
@@ -26,7 +62,7 @@ p {
 figure {
 	display: block;
 	margin: 0;
-	width: 70vw;
+	width: 60vw;
 	height: 100vh;
 	position: fixed;
 	top:0;
@@ -162,7 +198,7 @@ figure figcaption{
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: radial-gradient(circle, rgba(0,63,255,1) 0%, rgba(5,8,74,1) 100%);
+	background: radial-gradient(circle, rgba(1,51,64,1) 0%, rgba(193,242,254,1) 100%);
 	color: #fff;
 	font-size: 3em;
 	text-align: center;
