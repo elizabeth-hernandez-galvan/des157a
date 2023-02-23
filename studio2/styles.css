@@ -44,6 +44,7 @@ section {
 	/* justify-content: center; */
 	align-items: center;
 	font-family: 'Poor Story', cursive;
+	margin-top: 15px;
 }
 
 .title{
@@ -58,8 +59,8 @@ section {
 }
 
 .polaroid > img{
-	width: 390px;
-	height: 390px;
+	width: 90%;
+	height: 50%;
 	margin-top: 20px;
 	margin-bottom: 10px;
 	filter: grayscale(100%);
