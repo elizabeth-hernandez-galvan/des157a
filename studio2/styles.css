@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -46,6 +48,7 @@ section {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	font-family: 'Poor Story', cursive;
 }
 
 .polaroid > img{
@@ -53,10 +56,6 @@ section {
 	height: auto;
 	margin-bottom: 10px;
 	filter: grayscale(100%);
-}
-
-p {
-	line-height: 1.5em;
 }
 
 figure {
@@ -85,7 +84,7 @@ figure img {
 }
 
 figure figcaption{
-	width: 50%;
+	width: 25%;
 	position: absolute;
 	left: 50%;
 	top: 105%;
