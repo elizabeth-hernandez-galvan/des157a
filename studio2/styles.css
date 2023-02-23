@@ -11,14 +11,11 @@ body {
 	color: #333;
 	padding:0;
 	margin:0;
-	background-color:lightcoral;
+	background-color: #CBC3E3;
 }
 
 main {
 	width: 30vw;
-	padding:0;
-	margin:0;
-	/* padding: 20px; */
 }
 
 article{
@@ -26,8 +23,6 @@ article{
 	width: 40vw;
 	align-items: center;
 	justify-content: center;
-	margin:0;
-	padding:0;
 }
 
 section {
@@ -35,8 +30,6 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding:0;
-	margin:0;
 }
 
 .polaroid {
@@ -276,3 +269,44 @@ figure figcaption{
 
 
 
+/* Design For Laptop */
+@media screen and (max-width: 1024px)  and (min-width: 769px) {
+	.polaroid > img{
+		width: 80%;
+		height: 35%;
+	}
+  }
+  
+  /* Design For Tablet */
+  @media screen and (max-width: 768px) and (min-width: 481px) {
+	.polaroid > img{
+		width: 90%;
+		height: 50%;
+	}
+  }
+  
+  /* Design For Mobile */
+  @media screen and (max-width: 480px) {
+	main {
+		width: 100vw;
+	}
+
+	article{
+		width: 100vw;
+	}
+
+	.polaroid > img{
+		width: 90%;
+		height: 40%;
+	}
+	
+	.polaroid {
+		height: 40rem;
+		width: 70vw;
+	}
+
+	figure {
+		display: none;
+		overflow: hidden;
+	}
+  }
