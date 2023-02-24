@@ -4,7 +4,7 @@
 	const captions = [
 		'',
 		'1. Santa Rosa, CA',
-		'2. Yosemite, CA',
+		'2. Yosemite National Park',
 		'3. Sacramento, CA',
 		'4. Florida',
 		'5. New York',
