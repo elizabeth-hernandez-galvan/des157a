@@ -105,10 +105,12 @@ figure img {
 
 .sect1{
 	width: 147vh; /*147% the height of the image is the width ratio*/
-	top:0;
-	left: 50%;
-	transform:translateX(-50%);
+	top: calc(-690px + 100vh);
+	left: calc(-950px + 100vw);
+	/* transform:translateX(-50%); */
 }
+
+
 
 figure figcaption{
 	width: 25%;
@@ -186,34 +188,39 @@ figure figcaption{
 .sect3,
 .sect4,
 .sect5,
-.sect6{
+.sect6,
+.sect7{
     width: 3768px;
 }
 
 .sect2 {
-    top: 0;
-    left: 0;
+    top: calc(-1567px + 100vh);
+    left: calc(-1050px + 100vw);
 }
 
 .sect3 {
-    top: 0;
-    left: calc(-3768px + 70vw);
+    top: calc(-1667px + 100vh);
+    left: calc(-1050px + 100vw);
 }
 
 .sect4 {
-	top: calc(-2567px + 100vh);
-    left: 0;
+	top: calc(-2267px + 100vh);
+    left: calc(-2268px + 45vw);
 }
 
 .sect5 {
-    top: calc(-2567px + 100vh);
-    left: calc(-3768px + 70vw);
+    top: calc(-1267px + 100vh);
+    left: calc(-2468px + 45vw);
 }
 
 .sect6 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	top: calc(-1567px + 100vh);
+    left: calc(-1250px + 100vw);
+}
+
+.sect7 {
+    top: 0px;
+    left: calc(-3368px + 30vw);
 }
 
 /************** CSS Loader ****************/
