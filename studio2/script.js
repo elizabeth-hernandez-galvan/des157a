@@ -1,6 +1,7 @@
 (function () {
 	'use strict';
 
+	// Adding Scrolling Captions
 	const captions = [
 		'',
 		'1. Santa Rosa, CA',
@@ -19,6 +20,10 @@
 		window.scrollTo(0, 0);
 	}
 
+	/* This version adds a preloader screen that shows until all
+		the assets for the page have downloaded, including the large
+		image. This preloader is a div that covers the entire screen 
+		on the HTML file.*/
 	window.addEventListener('load', function () {
 		const posts = document.querySelectorAll('section');
 		let postTops = [];
@@ -28,15 +33,9 @@
 		let doneResizing;
 		let exitDirection;
 		let enterDirection;
-
-		/* This version adds a preloader screen that shows until all
-		the assets for the page have downloaded, including the large
-		image. This preloader is a div that covers the entire screen 
-		on the HTML file.
 		
-		The code below removes this div by fading it out, then once
+		/*The code below removes this div by fading it out, then once
 		it has faded out, sets it to display none. */
-
 		const preloader = document.getElementById('preloader');
 		preloader.className = 'fadeout';
 
@@ -53,6 +52,7 @@
 		window.addEventListener('scroll', function () {
 			pageTop = window.pageYOffset + 300;
 
+			//Check scroll direction
 			if (pageTop > postTops[counter]) {
 				counter++;
 				console.log(`scrolling down ${counter}`);
@@ -72,6 +72,7 @@
 					enterDirection = 'animate enterdown';
 				}
 
+				//Animation is completed
 				figCaption.className = exitDirection;
 				figCaption.addEventListener('animationend', function () {
 					let newCaption = document.querySelector('figcaption').cloneNode(true);
@@ -89,22 +90,27 @@
 
 		window.addEventListener('resize', function () {
 			clearTimeout(doneResizing);
+
+			// Start a timer that calls the resetPagePosition function in 500ms
 			doneResizing = setTimeout(function () {
-
 				resetPagePosition();
-
 			}, 500);
 		});
 
 		function resetPagePosition() {
+			// Clear out the postTop values
 			postTops = [];
+
+			// Push the new top values for each post in the Posts Array
 			posts.forEach(function (post) {
 				postTops.push(Math.floor(post.getBoundingClientRect().top) + window.pageYOffset);
 			});
 
+			// Hold the position of the document
 			const pagePosition = window.pageYOffset + 300;
 			counter = 0;
 
+			// Increment counter based on the pagePosition 
 			postTops.forEach(function (post) { if (pagePosition > post) { counter++; } });
 
 		}
