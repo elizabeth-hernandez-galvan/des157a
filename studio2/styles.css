@@ -83,6 +83,7 @@ h3{
 	filter: none;
 	transform: scale(1, 1) rotate(0deg);
 	transition: all 0.35s;
+	z-index: 5;
 }
 
 .polaroid:hover img{
