@@ -6,8 +6,6 @@
 	padding: 0;
 }
 
-/*Design for IMac 2048 by 1152 */
-
 body {
 	font-family: Arial;
 	color: #333;
@@ -112,8 +110,8 @@ figure img {
 
 .sect1{
 	width: 147vh; /*147% the height of the image is the width ratio*/
-	top: calc(-1870px + 100vh);
-	left: calc(-1500px + 100vw);
+	top: calc(-1890px + 100vh);
+	left: calc(-1515px + 100vw);
 	/* transform:translateX(-50%); */
 }
 
@@ -203,33 +201,33 @@ figure figcaption{
 }
 
 .sect2 {
-	top: calc(-2100px + 100vh);
-    left: calc(-1750px + 100vw);
+	top: calc(-2000px + 100vh);
+    left: calc(-1680px + 100vw);
 }
 
 .sect3 {
-    top: calc(-2000px + 100vh);
-    left: calc(-1700px + 100vw);
+    top: calc(-1900px + 100vh);
+    left: calc(-1590px + 100vw);
 }
 
 .sect4 {
-	top: calc(-2740px + 100vh);
-    left: calc(-2840px + 45vw);
+	top: calc(-2765px + 100vh);
+    left: calc(-2705px + 45vw);
 }
 
 .sect5 {
-    top: calc(-1730px + 100vh);
-    left: calc(-3050px + 45vw);
+    top: calc(-1720px + 100vh);
+    left: calc(-2975px + 45vw);
 }
 
 .sect6 {
-	top: calc(-1970px + 100vh);
-    left: calc(-1820px + 100vw);
+	top: calc(-1880px + 100vh);
+    left: calc(-1750px + 100vw);
 }
 
 .sect7 {
-    top: calc(-870px + 100vh);
-    left: calc(-5750px + 100vw);
+    top: calc(-770px + 100vh);
+    left: calc(-5620px + 100vw);
 }
 
 /************** CSS Loader ****************/
