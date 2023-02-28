@@ -105,7 +105,7 @@ figure img {
 
 .sect1{
 	width: 147vh; /*147% the height of the image is the width ratio*/
-	top: calc(-690px + 100vh);
+	top: calc(-1590px + 100vh);
 	left: calc(-950px + 100vw);
 	/* transform:translateX(-50%); */
 }
@@ -183,7 +183,7 @@ figure figcaption{
 		top: 105%;
 	}
 }
-
+.sect1,
 .sect2,
 .sect3,
 .sect4,
