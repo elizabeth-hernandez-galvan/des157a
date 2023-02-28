@@ -6,6 +6,8 @@
 	padding: 0;
 }
 
+/*Design for IMac 2048 by 1152 */
+
 body {
 	font-family: Arial;
 	color: #333;
@@ -35,11 +37,13 @@ section {
 
 h1{
 	font-family: 'Yellowtail', cursive;
+	font-size: 45px;
 }
 
 h3{
 	font-family: 'Nanum Pen Script', cursive;
-	font-size: 20px;
+	font-size: 30px;
+	line-height: 1.5;
 }
 
 .polaroid {
@@ -47,7 +51,7 @@ h3{
 	padding: 1rem;
 	border: 1px solid #ddd;
 	box-shadow: 0 0.2rem 1.2rem rgba(1,51,64,1);
-	height: 35rem;
+	height: 60rem;
 	width: 30vw;
 	display: flex;
 	flex-flow: column;
@@ -108,15 +112,15 @@ figure img {
 
 .sect1{
 	width: 147vh; /*147% the height of the image is the width ratio*/
-	top: calc(-1590px + 100vh);
-	left: calc(-950px + 100vw);
+	top: calc(-1870px + 100vh);
+	left: calc(-1500px + 100vw);
 	/* transform:translateX(-50%); */
 }
 
 
 
 figure figcaption{
-	width: 25%;
+	width: 15%;
 	position: absolute;
 	left: 50%;
 	top: 105%;
@@ -195,37 +199,37 @@ figure figcaption{
 .sect5,
 .sect6,
 .sect7{
-    width: 3768px;
+    width: 4500px;
 }
 
 .sect2 {
-    top: calc(-1567px + 100vh);
-    left: calc(-1050px + 100vw);
+	top: calc(-2100px + 100vh);
+    left: calc(-1750px + 100vw);
 }
 
 .sect3 {
-    top: calc(-1667px + 100vh);
-    left: calc(-1050px + 100vw);
+    top: calc(-2000px + 100vh);
+    left: calc(-1700px + 100vw);
 }
 
 .sect4 {
-	top: calc(-2267px + 100vh);
-    left: calc(-2268px + 45vw);
+	top: calc(-2740px + 100vh);
+    left: calc(-2840px + 45vw);
 }
 
 .sect5 {
-    top: calc(-1267px + 100vh);
-    left: calc(-2468px + 45vw);
+    top: calc(-1730px + 100vh);
+    left: calc(-3050px + 45vw);
 }
 
 .sect6 {
-	top: calc(-1567px + 100vh);
-    left: calc(-1250px + 100vw);
+	top: calc(-1970px + 100vh);
+    left: calc(-1820px + 100vw);
 }
 
 .sect7 {
-    top: 0px;
-    left: calc(-3368px + 30vw);
+    top: calc(-870px + 100vh);
+    left: calc(-5750px + 100vw);
 }
 
 /************** CSS Loader ****************/
@@ -300,13 +304,105 @@ figure figcaption{
 	}
 }
 
+/* Design For 1200 by 750 */
+@media screen and (max-width: 1200px) {
+	.polaroid {
+		height: 40rem;
+	}
 
+	.polaroid > img{
+		width: 90%;
+		height: 40%;
+	}
+	.sect1 {
+		top: calc(-1670px + 100vh);
+		left: calc(-1000px + 100vw);
+	}
+
+	.sect2 {
+		top: calc(-1790px + 100vh);
+		left: calc(-1175px + 100vw);
+	}
+	
+	.sect3 {
+		top: calc(-1700px + 100vh);
+		left: calc(-1080px + 100vw);
+	}
+	
+	.sect4 {
+		top: calc(-2560px + 100vh);
+		left: calc(-2600px + 45vw);
+	}
+	
+	.sect5 {
+		top: calc(-1530px + 100vh);
+		left: calc(-2880px + 45vw);
+	}
+	
+	.sect6 {
+		top: calc(-1670px + 100vh);
+		left: calc(-1230px + 100vw);
+	}
+	
+	.sect7 {
+		top: calc(-640px + 100vh);
+		left: calc(-5125px + 100vw);
+	}
+
+	h3{
+		font-size: 20px;
+		line-height: 1.5;
+	}
+
+	figure figcaption{
+		width: 20%;
+	}
+}
 
 /* Design For Laptop */
 @media screen and (max-width: 1024px)  and (min-width: 769px) {
 	.polaroid > img{
 		width: 80%;
 		height: 35%;
+	}
+	.sect1 {
+		top: calc(-1660px + 100vh);
+		left: calc(-700px + 100vw);
+	}
+
+	.sect2 {
+		top: calc(-1890px + 100vh);
+		left: calc(-890px + 100vw);
+	}
+	
+	.sect3 {
+		top: calc(-1700px + 100vh);
+		left: calc(-800px + 100vw);
+	}
+	
+	.sect4 {
+		top: calc(-2550px + 100vh);
+		left: calc(-2580px + 45vw);
+	}
+	
+	.sect5 {
+		top: calc(-1500px + 100vh);
+		left: calc(-2800px + 45vw);
+	}
+	
+	.sect6 {
+		top: calc(-1670px + 100vh);
+		left: calc(-950px + 100vw);
+	}
+	
+	.sect7 {
+		top: calc(-650px + 100vh);
+		left: calc(-4850px + 100vw);
+	}
+
+	h3{
+		font-size: 20px;
+		line-height: 1.5;
 	}
 }
   
@@ -315,6 +411,58 @@ figure figcaption{
 	.polaroid > img{
 		width: 90%;
 		height: 50%;
+	}
+
+	.sect1 {
+		top: calc(-1600px + 100vh);
+		left: calc(-400px + 100vw);
+	}
+
+	.sect2 {
+		top: calc(-1900px + 100vh);
+		left: calc(-600px + 100vw);
+	}
+	
+	.sect3 {
+		top: calc(-1750px + 100vh);
+		left: calc(-550px + 100vw);
+	}
+	
+	.sect4 {
+		top: calc(-2550px + 100vh);
+		left: calc(-2510px + 45vw);
+	}
+	
+	.sect5 {
+		top: calc(-1500px + 100vh);
+		left: calc(-2800px + 45vw);
+	}
+	
+	.sect6 {
+		top: calc(-1750px + 100vh);
+		left: calc(-720px + 100vw);
+	}
+	
+	.sect7 {
+		top: calc(-630px + 100vh);
+		left: calc(-4650px + 100vw);
+	}
+
+	h1{
+		font-size: 25px;
+	}
+
+	h3{
+		font-size: 15px;
+		line-height: 1.5;
+	}
+
+	.polaroid {
+		height: 37rem;
+	}
+
+	.polaroid > img{
+		height: 40%;
 	}
 }
   
@@ -341,5 +489,9 @@ figure figcaption{
 	figure {
 		display: none;
 		overflow: hidden;
+	}
+
+	h3{
+		line-height: 1.7;
 	}
 }
