@@ -13,13 +13,62 @@ div {
     padding: 20px;
 }
 
-#gamecontrol, #score {
-    background-color: aliceblue;
+#instruct{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#instruct > div > h1 {
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 30px;;
+}
+
+#instruct > div > p {
+    line-height: 2;
+    font-size: 17px;;
+}
+
+#instruct > div > ol {
+    line-height: 2;
+    font-size: 17px;
+}
+
+ol > li::marker {
+    font-weight: bold;
+    font-size: 18px;;
+}
+
+#continue {
+    
 }
 
 #game {
     background-color:#eaeaea;
 }
+
 #actions {
     background-color: silver;
+}
+
+#score {
+    background-color: aliceblue;
+}
+
+
+#gamecontrol{
+    background-color: salmon;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.col-text{
+    background-color: red;
+    width: 45%;
+}
+
+.col-img{
+    background-color: green;
+    width: 45%;
 }

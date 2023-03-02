@@ -109,17 +109,8 @@ figure img {
     
 }
 
-.sect1{
-	width: 147vh; /*147% the height of the image is the width ratio*/
-	top: calc(-1890px + 100vh);
-	left: calc(-1515px + 100vw);
-	/* transform:translateX(-50%); */
-}
-
-
-
 figure figcaption{
-	width: 15%;
+	width: 25%;
 	position: absolute;
 	left: 50%;
 	top: 105%;
@@ -190,6 +181,13 @@ figure figcaption{
 	}
 }
 
+.sect1{
+	/* width: 147vh;  */
+	top: -810px;
+	left: 650px;
+	/* transform:translateX(-50%); */
+}
+
 /* Deciding where to zoom in */
 .sect1,
 .sect2,
@@ -202,33 +200,33 @@ figure figcaption{
 }
 
 .sect2 {
-	top: calc(-2000px + 100vh);
-    left: calc(-1680px + 100vw);
+	top: -930px;
+	left: 260px;
 }
 
 .sect3 {
-    top: calc(-1900px + 100vh);
-    left: calc(-1590px + 100vw);
+    top: -830px;
+	left: 370px;
 }
 
 .sect4 {
-	top: calc(-2765px + 100vh);
-    left: calc(-2705px + 45vw);
+	top: -1680px;
+	left: -1800px;
 }
 
 .sect5 {
-    top: calc(-1720px + 100vh);
-    left: calc(-2975px + 45vw);
+    top: -600px;
+	left: -2070px;
 }
 
 .sect6 {
-	top: calc(-1880px + 100vh);
-    left: calc(-1750px + 100vw);
+	top: -790px;
+	left: 210px;
 }
 
 .sect7 {
-    top: calc(-770px + 100vh);
-    left: calc(-5620px + 100vw);
+    top: 320px;
+	left: -3660px;
 }
 
 /************** CSS Loader ****************/
