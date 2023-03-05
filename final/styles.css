@@ -1,0 +1,66 @@
+body{
+    background-color: lightcoral;
+}
+
+header > h1 {
+    font-size: 3rem;
+}
+
+.wrapper{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 1%;
+}
+
+.summary{
+    margin: 0% 2%;
+    background-color: white;
+    border-radius: 5%;
+    padding-bottom: 2%;
+}
+
+h1{
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin: 1%;
+    border-radius: 5%;
+    height: 15rem;
+}
+
+.title {
+    background-color: blanchedalmond;
+    border-radius: 5%;
+}
+
+.text {
+    padding: 0% 6%;
+}
+
+.goals{
+    background-color: white;
+}
+
+.design{
+    background-color: white;
+}
+
+.strategies{
+    background-color: white;
+}
+
+.experience{
+    background-color: white;
+}
