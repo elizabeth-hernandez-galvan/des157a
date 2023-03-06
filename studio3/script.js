@@ -106,6 +106,7 @@
                 document.getElementById('rollagain').addEventListener('click', function(){
                     throwDice();
                 });
+
                 document.getElementById('pass').addEventListener('click', function(){
                     gameData.index ? (gameData.index = 0) : (gameData.index = 1);
                     setUpTurn();
@@ -120,13 +121,14 @@
             if (gameData.score[gameData.index] > gameData.gameEnd) {
                 
                 showCurrentScore();
-                score.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+
+                score.innerHTML = `<h2>${gameData.players[gameDataindex]} wins with ${gameData.score[gameData.index]} points!</h2>`;
                 
                 actionArea.innerHTML = '';
                 document.getElementById('quit').innerHTML = "Start a New Game?";
 
                 return true;
-
+                
             } else {
                 showCurrentScore();
                 return false;
