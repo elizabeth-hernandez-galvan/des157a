@@ -149,7 +149,7 @@ ol > li::marker {
 .player > img {
     width: 300px;
     border-radius: 20%;
-    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 8px 1px rgba(0,0,0,.75);
 }
 
 #play1 > img{

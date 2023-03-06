@@ -91,7 +91,7 @@
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
 
                 //Switch players
-                game.innerHTML +=  `<p>Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
+                game.innerHTML = `<p>Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
 
                 //Show Current Score
                 setTimeout(setUpTurn, 2000);
@@ -122,23 +122,23 @@
                 
                 showCurrentScore();
 
-                score.innerHTML = `<h2>${gameData.players[gameDataindex]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+                score.innerHTML += `<h2>${gameData.players[gameDataindex]} wins with ${gameData.score[gameData.index]} points!</h2>`;
                 
                 actionArea.innerHTML = '';
                 document.getElementById('quit').innerHTML = "Start a New Game?";
 
-                return true;
-                
+                // return true;
+
             } else {
                 showCurrentScore();
-                return false;
+                // return false;
             }
-
         }
 
+        //function to output score
         function showCurrentScore(){
-            score1.innerHTML = `score: ${gameData.score[0]}`;
-            score2.innerHTML = `score: ${gameData.score[1]}`;
+            score1.innerHTML = `Score: ${gameData.score[0]}`;
+            score2.innerHTML = `Score: ${gameData.score[1]}`;
         }
 
 }())
