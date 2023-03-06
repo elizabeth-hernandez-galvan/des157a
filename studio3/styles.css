@@ -55,16 +55,28 @@ ol > li::marker {
     align-self: center;
 }
 
+#third > h1{
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: 3rem;
+}
 #game {
-    background-color:#eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
 }
 
 #actions {
-    background-color: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #score {
-    background-color: aliceblue;
+    position: absolute;
+    top: -30px;
+    left: 100px;
 }
 
 #gamecontrol{
@@ -117,6 +129,12 @@ ol > li::marker {
     align-items: center;
     position: absolute;
     top: 20%;
+}
+
+.dice {
+    position: relative;
+    top: 150px;
+    max-width: 100px;
 }
 
 #players {
