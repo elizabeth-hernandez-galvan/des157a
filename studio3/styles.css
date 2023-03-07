@@ -150,6 +150,20 @@ button {
     transform: scaleX(-1);
 }
 
+.winner{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.text{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
 .score {
     font-size: 3em;
     color: white;
@@ -167,6 +181,7 @@ button {
     font-size: 1.5rem;
     width: 12%;
     padding: 0.8rem 0.8rem;
+    margin: 0 1%;
 }
 
 #game {

@@ -18,7 +18,7 @@
 
     const gameData = {
             dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
-            players: ['player1', 'player2'],
+            players: ['Player 1', 'Player 2'],
             score: [0, 0],
             roll1: 0,
             roll2: 0,
@@ -105,7 +105,7 @@
 
         function setUpTurn() {
             game.className = "showing";
-            game.innerHTML = `<p> Roll the dice for the ${gameData.players[gameData.index]}</p>`;
+            game.innerHTML = `<p class = "text">${gameData.players[gameData.index]}</p>`;
             actionArea.innerHTML = '<button id = "roll"> Fight </button>';
 
             document.getElementById('roll').addEventListener("click", function(){
@@ -135,7 +135,7 @@
             if (gameData.rollSum === 2) {
                 console.log("Snake eyes were rolled")
                 
-                game.innerHTML += '<p>Oh snap! Snake eyes!</p>';
+                game.innerHTML += '<p class = "text">Oh snap! Snake eyes!</p>';
                 gameData.score[gameData.index] = 0;
 
                 //Switch players
@@ -153,7 +153,7 @@
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
 
                 //Switch players
-                game.innerHTML = `<p>Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
+                game.innerHTML = `<p class = "text">Sorry, one of your rolls was a one, <br>switching to ${gameData.players[gameData.index]}</p>`;
 
                 //Show Current Score
                 setTimeout(setUpTurn, 2000);
@@ -181,10 +181,12 @@
         //function to check for winner
         function checkWinningCondition(){
             if (gameData.score[gameData.index] > gameData.gameEnd) {
+
+                console.log("WIN")
                 
                 showCurrentScore();
 
-                score.innerHTML += `<h2>${gameData.players[gameDataindex]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+                score.innerHTML += `<h2 class="winner">${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
                 
                 actionArea.innerHTML = '';
                 document.getElementById('quit').innerHTML = "Start a New Game?";
