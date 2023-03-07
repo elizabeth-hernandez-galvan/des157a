@@ -29,7 +29,7 @@ body {
 .modal-content {
     background-color: #fefefe;
     color: #000;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto; /* 10% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
@@ -47,6 +47,30 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.instruct {
+    text-align: left;
+}
+.instruct > h3 {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+
+.instruct > p {
+    line-height: 2;
+    font-size: 15px;
+}
+
+.instruct > ol {
+    line-height: 2;
+    font-size: 16px;
+}
+
+ol > li::marker {
+    font-weight: bold;
+    font-size: 17px;;
 }
 
 h1 {
@@ -147,4 +171,9 @@ button {
 
 #game {
     text-align: center;
+}
+
+#gamecontrol {
+    background:rgba(255,255,255, 0.3);
+    height: 90%;
 }
