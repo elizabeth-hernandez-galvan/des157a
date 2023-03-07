@@ -1,92 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<html>
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Studio 3</title>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
-	<link href="styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriWizard</title>
+    <!-- link to normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- link to styles.css -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- link to script.js -->
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-
-    <section id="instruct">
-        <div>
-            <h1>Triwizard Tourney Instructions</h1>
-            <p>There are two players. Player options include: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin. Players will randomly be sorted into a house. The Globlet of fire will choose the player. The player whose turn it is casts a spell. The total points from the spells are added to the current player's score, unless either spell score comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each cast, the current player can either cast again, (assuming a score of "one" was not casted) or if the current player feels scared, they can hide and pass their turn to the other player. </p>
-
-            <p>Oh, and if you cast spells with two scores of "ones" (wand malfunction), your current score gets zeroed out, and you have to go through all the tasks again. So don’t do that.</p>
-
-            <p>In order to win, each player must overcome the three tasks.</p>
-            <ol>
-                <li><strong>Dragon:</strong> At 10 points, the player will Slay the Dragon.</li>
-                <li><strong>Hogwarts Lake:</strong> At 20 points, the player will Survive the Hogwarts Lake.</li>
-                <li><strong>Labyrinth:</strong> At 30 points, the player will conquer the Labyrinth.</li>
-            </ol>
-                
-            <p> The first player to get 30 points or higher, has successfully completed all three tasks and becomes a TRIWIZARD CHAMPION.</p> 
-        </div>
-        <button id="continue">Continue</button>
-    </section>
-
-    <section id="first">
-        <div id="gamecontrol">
-            <div class="col-text">
-                <h2>DO YOU HAVE WHAT IT TAKES TO BECOME A TRIWIZARD CHAMPION?</h2>
-            </div>
+    <div class="showing" id="landing">
+        <header>
+            <h1>DO YOU HAVE WHAT IT TAKES TO BECOME A TRIWIZARD CHAMPION?</h1>
             <div class="col-img">
-                <img class= "goblet" src="images/Goblet.png" alt="">
-                <button id="playerelect">Draw</button>
-            </div>
-        </div>
-	</section>
+                <!-- <img class= "goblet" src="images/Goblet.png" alt=""> -->
+                <div class="btn">
+                    <button id="learn">Instructions</button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3>Triwizard Tourney Instructions</h1>
 
-	<section id="second">
-        <div id="gamestart">
-            <div class="col-text">
-                <h2>
-                    YIKES! {Hogwarts House}, you have been selected by the goblet of fire to attempt this challenge. Caution there is no going back and getting this cup can be deadly; hope you know good spells. Good luck!
-                </h2>
-            </div>
-            <div class="col-img">
-                <img class= "goblet" src="images/Goblet.png" alt="">
-                <button id="startgame">Start</button>
-            </div>
-        </div>
-	</section>
+                            <p>There are two players. Player options include: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin. Players will randomly be sorted into a house. The Globlet of fire will choose the player. The player whose turn it is casts a spell. The total points from the spells are added to the current player's score, unless either spell score comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each cast, the current player can either cast again, (assuming a score of "one" was not casted) or if the current player feels scared, they can hide and pass their turn to the other player. </p>
 
-    <section id="third">
-        <h1>Game of Wizardry</h1>
-        <div id="players">
-            <div id="play1" class="player">
-                <img src="images/AI_Gryffindor.jpg" alt="">
-                <h3 id="score1" class="score">Score: 0</h3>
-            </div>
+                            <p>Oh, and if you cast spells with two scores of "ones" (wand malfunction), your current score gets zeroed out, and you have to go through all the tasks again. So don’t do that.</p>
 
-            <div id="dice">
-                <p>This is where the dice will go</p>
-            </div>
+                            <p>In order to win, each player must overcome the three tasks.</p>
+                            
+                            <ol>
+                                <li><strong>Dragon:</strong> At 10 points, the player will Slay the Dragon.</li>
+                                <li><strong>Hogwarts Lake:</strong> At 20 points, the player will Survive the Hogwarts Lake.</li>
+                                <li><strong>Labyrinth:</strong> At 30 points, the player will conquer the Labyrinth.</li>
+                            </ol>
+                    
+                            <p> The first player to get 30 points or higher, has successfully completed all three tasks and becomes a TRIWIZARD CHAMPION.</p>
+                        </div>
 
-            <div id="play2" class="player">
-                <img src="images/AI_dragon.jpg" alt="">
-                <h3 id="score2" class="score">Score: 0</h3>
+                    </div>
+                    <button id="startgame">Start</button>
+                </div>
             </div>
-        </div>
-        <div id="game"></div>
-        <div id="actions"></div>
-        <div id="score"></div>
-	</section>
+        </header>
 
-    <section id="fourth">
-        <div id="congrats">
-            <h2>Congratulations! Looks like you had enough courage, intelligence, resourcefulness, and magical ability to become a TRIWIZARD CHAMPION.</h2>
-            <h2>Well . . . maybe it was just luck, play again to find out.</h2>
-            <button id="playagian">Accept Challenge</button>
-        </div>
-	</section>
-	
-	<script src="script.js"></script>
-</body>
+    </div>
+    
+
+    <div class="hidden" id="gamecontrol">
+        <article id="header-top">
+            <h1 class="task">Slay the Dragon</h1>
+            <button id="quit">Wanna Quit?</button> 
+        </article>
+
+        <section>
+            <div id="players">
+                <div id="play1" class="player">
+                    <img src="images/AI_Gryffindor.jpg" alt="Gryffindor">
+                    <h3 id="score1" class="score">Score: 0</h3>
+                </div>
+    
+                <div id="dice"></div>
+    
+                <div id="play2" class="player">
+                    <img src="images/AI_dragon.jpg" alt="dragon">
+                    <h3 id="score2" class="score">Score: 0</h3>
+                </div>
+            </div>
+            <div id="game"></div>
+            <div id="actions">
+                <button id="rollagain">Fight</button>
+                <button id="pass">Hide</button>
+            </div>
+            <div id="score"></div>
+        </section>
+
+    </div>
+    </body>
 </html>

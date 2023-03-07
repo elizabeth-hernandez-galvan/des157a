@@ -1,56 +1,118 @@
 (function() {
+    //open iife
     "use strict";
-    console.log('reading js');
+    console.log("reading js");
 
     const startGame = document.getElementById('startgame');
-        const gameControl = document.getElementById('gamecontrol');
-        const game = document.getElementById('game');
-        const dice = document.getElementById('dice');
-        const score = document.getElementById('score');
-        const score1 = document.getElementById("score1");
-        const score2 = document.getElementById("score2");
-        const actionArea = document.getElementById('actions');
+    const gameControl = document.getElementById('gamecontrol');
+    const game = document.getElementById('game');
+    const playerName = document.getElementById('player-name');
+    const score = document.getElementById('score');
+    const score1 = document.getElementById("score1");
+    const score2 = document.getElementById("score2");
+    const actionArea = document.getElementById('actions');
+    const dice = document.getElementById('dice');
+    const modal = document.getElementById("myModal");
+    const myBtn = document.getElementById("learn");
+    const span = document.getElementsByClassName("close")[0];
 
-        const gameData = {
-            dice: ['images/1die.jpg', 'images/2die.jpg', 'images/3die.jpg', 'images/4die.jpg', 'images/5die.jpg', 'images/6die.jpg',],
-            players: ['player 1', 'player 2'],
+    const gameData = {
+            dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
+            players: ['player1', 'player2'],
             score: [0, 0],
             roll1: 0,
             roll2: 0,
             rollSum: 0,
             index: 0,
             gameEnd: 29
+        };
 
+    const colors = ["red", "orange", "yellow", "lightgreen", "lightblue", "violet"];
+
+    const numBalls = 300;
+    const balls = [];
+        
+        for (let i = 0; i < numBalls; i++) {
+            let ball = document.createElement("div");
+            ball.classList.add("ball-bg");
+            //Gets random colors from those defined above
+            ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+            // Random Placement on screen
+            ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+            ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+            // Gets random scale factor for each ball
+            ball.style.transform = `scale(${Math.random()})`;
+            ball.style.width = `${Math.random()}rem`;
+            ball.style.height = ball.style.width;
+          
+            //adds balls to background
+            balls.push(ball);
+            document.body.append(ball);
+        }
+        
+        // Keyframes (Movement)
+        balls.forEach((circles, i, current) => {
+            let to = {
+                x: Math.random() * (i % 2 === 0 ? -5 : 5),
+                y: Math.random() * 50
+          };
+        
+          let anim = circles.animate(
+            [
+              { transform: "translate(0, 0)" },
+              { transform: `translate(${to.x}rem, ${to.y}rem)` }
+            ],
+            {
+              duration: (Math.random() + 1) * 2000,
+              direction: "alternate",
+              fill: "both",
+              iterations: Infinity,
+              easing: "ease-in-out"
+            }
+          );
+        });
+
+        myBtn.onclick = function() {
+            modal.style.display = "block";
         }
 
-        // function for the game start
-        startGame.addEventListener('click', function(){
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
 
-            //Randomly set game Index
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        startGame.addEventListener('click', function() {
+            document.querySelector("#landing").className = "hidden";
+            gameControl.className = "showing";
+            //randomy set game index here
             gameData.index = Math.round(Math.random());
-            // console.log(`index: ${gameData.index}`);
-
-            gameControl.innerHTML = '<h2> The Game Has Started</h2>';
-            gameControl.innerHTML += '<button id = "quit"> Wanna Quit? </button>';
+            console.log(`index: ${gameData.index}`);
 
             document.getElementById('quit').addEventListener("click", function(){
                 location.reload();
+                gameControl.className = "hidden";
             });
+            console.log("set up the turn!");
+            setUpTurn();
+        });
 
-            throwDice();
-        })
-
-        //function to switch turns
-        function setUpTurn(){
-
+        function setUpTurn() {
+            game.className = "showing";
             game.innerHTML = `<p> Roll the dice for the ${gameData.players[gameData.index]}</p>`;
-            actionArea.innerHTML = '<button id = "roll"> Roll the Dice </button>';
+            actionArea.innerHTML = '<button id = "roll"> Fight </button>';
 
             document.getElementById('roll').addEventListener("click", function(){
                 // console.log("Roll the dice!"); 
                 throwDice();
             });
-        }
+        };
 
         //function to throw dice
         function throwDice(){
@@ -101,7 +163,7 @@
                 console.log("The game proceeds")
 
                 gameData.score[gameData.index] += gameData.rollSum;
-                actionArea. innerHTML = '<button id = "rollagain">Roll Again</button> or <button id = "pass">Pass</button>'
+                actionArea. innerHTML = '<button id = "rollagain">Fight</button> or <button id = "pass">Hide</button>'
 
                 document.getElementById('rollagain').addEventListener('click', function(){
                     throwDice();
@@ -127,11 +189,11 @@
                 actionArea.innerHTML = '';
                 document.getElementById('quit').innerHTML = "Start a New Game?";
 
-                // return true;
+                return true;
 
             } else {
                 showCurrentScore();
-                // return false;
+                return false;
             }
         }
 
