@@ -227,6 +227,25 @@
 
                 checkWinningCondition();
             }
+
+            //Check Task
+            if(player === gameData.score[gameData.index] > gameData.task1){
+                console.log("PLAYER WINS")
+                showCurrentScore();
+
+                score.innerHTML += `<h2 class="winner">Good work, you win with ${gameData.score[gameData.index]} points!</h2>`;
+            
+                actionArea.innerHTML = '';
+                document.getElementById('quit').innerHTML = "Start a New Game?";
+            }
+            else if(computer == gameData.score[gameData.index] > gameData.task1){
+                console.log("COMPUTER WINS")
+                score.innerHTML += `<h2 class="winner">Sorry, the computer wins with ${gameData.score[gameData.index]} points!</h2>`;
+            
+                actionArea.innerHTML = '';
+                document.getElementById('quit').innerHTML = "Start a New Game?";
+        
+                }
         }
 
         //function to check for winner
@@ -259,7 +278,7 @@
                 // actionArea.innerHTML = '';
                 // document.getElementById('quit').innerHTML = "Start a New Game?";
 
-                openPopup1()
+                openPopup1();
 
                 return true;
             }else if (gameData.score[gameData.index] > gameData.task2) {
