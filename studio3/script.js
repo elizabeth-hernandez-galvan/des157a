@@ -15,6 +15,11 @@
     const myBtn = document.getElementById("learn");
     const span = document.getElementsByClassName("close")[0];
 
+    //sounds
+    const diceSound = new Audio("audio/alone-darkness.mp3"); //need to change sound #placeholder
+    const turnOverSound = Audio("audio/alone-darkness.mp3"); //need to change sound #placeholder
+    const winSound = new Audio("audio/alone-darkness.mp3"); //need to change sound #placeholder
+
     const gameData = {
             dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
             players: ['Player 1', 'Player 2'],
@@ -142,7 +147,7 @@
             //If Two 1's are rolled
             if (gameData.rollSum === 2) {
                 console.log("Snake eyes were rolled")
-                
+                turnOverSound.play();
                 game.innerHTML += '<p class = "text">Oh snap! Snake eyes!</p>';
                 gameData.score[gameData.index] = 0;
 
@@ -157,7 +162,7 @@
             //If either die is a 1
             } else if (gameData.roll1 === 1 || gameData.roll2 === 1){
                 console.log("One of the two dice was a 1")
-                
+                turnOverSound.play();
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
 
                 //Switch players
@@ -182,7 +187,11 @@
                     setUpTurn();
                 });
 
-                checkWinningCondition();
+                if(checkWinningCondition()) {
+                    winSound.play();
+                } else {
+                    diceSound.play();
+                }
             }
         }
 
