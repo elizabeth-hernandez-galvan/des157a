@@ -26,6 +26,14 @@
             gameEnd: 29
         };
 
+    let audio = new Audio({
+        loop: true,
+        volume:1,
+        src:['/audio/alone-darkness.mp3']
+    })
+
+    audio.play();
+
     const colors = ["red", "orange", "yellow", "lightgreen", "lightblue", "violet"];
 
     const numBalls = 300;
@@ -87,6 +95,7 @@
             }
         }
         
+        //Game Start
         startGame.addEventListener('click', function() {
             document.querySelector("#landing").className = "hidden";
             gameControl.className = "showing";
