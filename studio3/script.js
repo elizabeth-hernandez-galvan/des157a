@@ -6,7 +6,6 @@
     const startGame = document.getElementById('startgame');
     const gameControl = document.getElementById('gamecontrol');
     const game = document.getElementById('game');
-    const playerName = document.getElementById('player-name');
     const score = document.getElementById('score');
     const score1 = document.getElementById("score1");
     const score2 = document.getElementById("score2");
