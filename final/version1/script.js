@@ -16,7 +16,8 @@
     const modal = document.getElementById("myModal");
     const myBtn = document.getElementById("learn");
     const span = document.getElementsByClassName("close")[0];
-    const popup = document.getElementById("popup");
+    const popUp1 = document.getElementById("popup1");
+    const popUp2 = document.getElementById("popup2");
     const gameData = {
             dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
             players: ['Player 1', 'Player 2', 'Player 3', 'Player 4','Computer'],
@@ -258,7 +259,7 @@
                 // actionArea.innerHTML = '';
                 // document.getElementById('quit').innerHTML = "Start a New Game?";
 
-                openPopup()
+                openPopup1()
 
                 return true;
             }else if (gameData.score[gameData.index] > gameData.task2) {
@@ -266,7 +267,7 @@
                 
                 showCurrentScore();
 
-                if(player === gameData.score[gameData.index] > gameData.task1){
+                if(player === gameData.score[gameData.index] > gameData.task2){
                     console.log("PLAYER WINS")
                     showCurrentScore();
 
@@ -274,7 +275,7 @@
                 
                     actionArea.innerHTML = '';
                 }
-                else if(computer == gameData.score[gameData.index] > gameData.task1){
+                else if(computer == gameData.score[gameData.index] > gameData.task2){
                     console.log("COMPUTER WINS")
                     score.innerHTML += `<h2 class="winner">Sorry, the computer wins with ${gameData.score[gameData.index]} points!</h2>`;
                 
@@ -283,7 +284,7 @@
             
                     }
 
-                openPopup()
+                openPopup2()
 
                 return true;
             } else {
@@ -298,23 +299,36 @@
             score2.innerHTML = `Score: ${gameData.score[1]}`;
         }
 
-        //Turn on Overlay
-        function openPopup() {
-        popup.classList.add("open")
-        popup.innerHTML = '<h1>CONGRATULATIONS</h1><div class="imgRow"><img src="images/AI_dragon.jpg" alt="dragon"><img src="images/AI_Merperson.jpg" alt="merperson"><img src="images/AI_Maze.jpg" alt="maze"></div><h2>The dragon has been slayed. You have passed the first challenge! Next Challenge: Surviving the Hogwarts Lake.</h2><button id = "continue"> Continue </button>';
-        console.log("overlay on");
+        const cont1 = document.getElementById("continue1");
+        const cont2 = document.getElementById("continue2");
+        
+        cont1.onclick = function() {
+            closePopup1();
+        }
+        cont2.onclick = function() {
+            closePopup2();
         }
 
-        const cont = document.getElementById("continue");
-
-        cont.onclick = function() {
-            closePopup();
-            throwDice();
+        //Turn on Overlay 1
+        function openPopup1() {
+            popUp1.classList.add("open")
+            // popup.innerHTML = '<h1>CONGRATULATIONS</h1><div class="imgRow"><img src="images/AI_dragon.jpg" alt="dragon"><img src="images/AI_Merperson.jpg" alt="merperson"><img src="images/AI_Maze.jpg" alt="maze"></div><h2>The dragon has been slayed. You have passed the first challenge! Next Challenge: Surviving the Hogwarts Lake.</h2><button id = "continue"> Continue </button>';
+            // console.log("overlay on");
         }
 
-        function closePopup() {
-        popup.classList.remove("open");
-        console.log("overlay off");
+        function closePopup1() {
+            popUp1.classList.remove("open");
+            console.log("overlay off");
+        }
+
+        //Turn on Overlay 2
+        function openPopup2() {
+            popUp2.classList.add("open")
+        }
+    
+        function closePopup2() {
+            popUp2.classList.remove("open");
+            console.log("overlay off");
         }
 
 }())

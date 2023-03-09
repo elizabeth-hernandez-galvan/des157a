@@ -75,7 +75,7 @@
                 <div id="dice"></div>
     
                 <div id="play2" class="player">
-                    <img src="images/AI_dragon.jpg" alt="dragon">
+                    <img id="comp" src="images/AI_dragon.jpg" alt="dragon">
                     <h2>Player 2: Computer</h2>
                     <h3 id="score2" class="score">Score: 0</h3>
                 </div>
@@ -88,7 +88,7 @@
             <div id="score"></div>
         </section>
 
-        <div class="popup" id="popup">
+        <div class="popup" id="popup1">
             <h1>CONGRATULATIONS</h1>
             <div class="imgRow">
                 <img src="images/AI_dragon.jpg" alt="dragon">
@@ -96,7 +96,18 @@
                 <img src="images/AI_Maze.jpg" alt="maze">
             </div>
             <h2>The dragon has been slayed. You have passed the first challenge! Next Challenge: Surviving the Hogwarts Lake.</h2>
-            <button type="button" onclick="closePopup()">Fight</button>
+            <button id="continue1">Continue</button>
+        </div>
+
+        <div class="popup" id="popup2">
+            <h1>CONGRATULATIONS</h1>
+            <div class="imgRow">
+                <img src="images/AI_Merperson.jpg" alt="merperson">
+                <img src="images/AI_Maze.jpg" alt="maze">
+                <img src="images/AI_dragon.jpg" alt="dragon">
+            </div>
+            <h2>You survived the Hogwarts Lake. You have passed the second challenge! Next Challenge: Conquering the Labyrinth.</h2>
+            <button id="continue2">Continue</button>
         </div>
 
     </div>
