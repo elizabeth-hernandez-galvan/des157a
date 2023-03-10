@@ -16,9 +16,9 @@
     const span = document.getElementsByClassName("close")[0];
 
     //sounds
-    const diceSound = new Audio("audio/alone-darkness.mp3"); //need to change sound #placeholder
-    const turnOverSound = Audio("audio/alone-darkness.mp3"); //need to change sound #placeholder
-    const winSound = new Audio("audio/alone-darkness.mp3"); //need to change sound #placeholder
+    const diceSound = new Audio("audio/dice.mp3"); 
+    const turnOverSound = new Audio("audio/turnOver.mp3");
+    const winSound = new Audio("audio/fanfare.mp3");
 
     const gameData = {
             dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
