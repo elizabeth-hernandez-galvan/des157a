@@ -26,9 +26,9 @@
             roll2: 0,
             rollSum: 0,
             index: 0,
-            task1: 9,
-            task2: 19,
-            task3: 29
+            task1: 10,
+            task2: 20,
+            gameEnd: 30
         };
     
         const pics = [
@@ -249,12 +249,20 @@
         }
 
         //function to check for winner
-        function checkWinningCondition(player,computer){
+        function checkWinningCondition(){
+            /*
             if (gameData.score[gameData.index] > gameData.task1) {
                 console.log("Task1")
                 
+                // showCurrentScore();
+                
+                if ((score1 || score2) % 10 == 0) {
+                    console.log(`Player 1 score: ${score}`)
+                    openPopup1()
+                }
                 showCurrentScore();
 
+                /*
                 if(player === gameData.score[gameData.index] > gameData.task1){
                     console.log("PLAYER WINS")
                     showCurrentScore();
@@ -272,19 +280,23 @@
                     document.getElementById('quit').innerHTML = "Start a New Game?";
             
                     }
+    //            
 
                 // score.innerHTML += `<h2 class="winner">${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
                 
                 // actionArea.innerHTML = '';
                 // document.getElementById('quit').innerHTML = "Start a New Game?";
 
-                openPopup1();
+                // openPopup1();
 
-                return true;
-            }else if (gameData.score[gameData.index] > gameData.task2) {
+                return true;}
+                if (gameData.score[gameData.index] > gameData.task2) {
                 console.log("Task2")
                 
                 showCurrentScore();
+                    if (score1 || score2 % 10 == 0) {
+                        openPopup2()
+                    }
 
                 if(player === gameData.score[gameData.index] > gameData.task2){
                     console.log("PLAYER WINS")
@@ -301,9 +313,32 @@
                     actionArea.innerHTML = '';
                     document.getElementById('quit').innerHTML = "Start a New Game?";
             
-                    }
+                }
+                else 
+                */
+            
+            if (gameData.score[gameData.index] >= gameData.gameEnd) {
 
-                openPopup2()
+                console.log("WIN")
+                    
+                showCurrentScore();
+    
+                score.innerHTML += `<h2 class="winner">${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+                    
+                actionArea.innerHTML = '';
+                document.getElementById('quit').innerHTML = "Start a New Game?";
+                       
+                
+                return true;
+            }
+            else if (gameData.score[gameData.index] > gameData.task1) {
+                console.log("Task 1")
+                
+                showCurrentScore();
+
+                score.innerHTML += openPopup1();
+    
+                
 
                 return true;
             } else {
