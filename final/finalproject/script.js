@@ -19,11 +19,13 @@
     const popUp1 = document.getElementById("popup1");
     const popUp2 = document.getElementById("popup2");
     const popUp3 = document.getElementById("popup3");
+    
     //sounds
     const diceSound = new Audio("audio/dice.mp3"); 
     const turnOverSound = new Audio("audio/turnOver.mp3");
     const winSound = new Audio("audio/fanfare.mp3");
 
+    //Overlay Stop on each task
     let flag1 = 0;
     let flag2 = 0;
     
