@@ -193,7 +193,8 @@
         //If Two 1's are rolled
         if (gameData.rollSum === 2) {
             console.log("Snake eyes were rolled")
-            
+            turnOverSound.play();
+
             game.innerHTML += '<p class = "text">Oh snap! Snake eyes!</p>';
             gameData.score[gameData.index] = 0;
 
@@ -208,7 +209,8 @@
         //If either die is a 1
         } else if (gameData.roll1 === 1 || gameData.roll2 === 1){
             console.log("One of the two dice was a 1")
-            
+            turnOverSound.play();
+
             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
 
             //Switch players
@@ -233,7 +235,11 @@
                 setUpTurn();
             });
 
-            checkWinningCondition();
+            if(checkWinningCondition()) {
+                    winSound.play();
+            } else {
+                diceSound.play();
+            }
         }
 
         //Check Task
