@@ -7,13 +7,6 @@ body {
     width: 100vw;
 }
 
-audio{
-    position: fixed; 
-    right: 20px;
-    top: 0;
-    width: 100px;
-}
-
 .ball-bg {
     position: absolute;
     border-radius: 100%;
@@ -139,9 +132,9 @@ button {
 }
 
 #players {
-    margin: 5%;
+    /* margin: 5%; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .player {
@@ -169,6 +162,18 @@ button {
     font-size: 2rem;
     font-weight: bold;
     font-style: italic;
+}
+
+#dice{
+    display: flex;
+    justify-content: space-between;
+    transform: scale(0.9);
+    margin: 1%;
+    padding: 50px;
+}
+
+#dice > img{
+    padding: 0 2%;
 }
 
 .score {
@@ -199,3 +204,71 @@ button {
     background:rgba(255,255,255, 0.3);
     height: 90%;
 }
+  
+.popup{
+    width: 70%;
+    height: 80%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    border-radius: 6px;
+    background-color: yellow;
+    color: #000;
+    position: absolute;
+    text-align: center;
+    padding: 0 30px 30px;
+    visibility: hidden;
+    transition: transform 0.5s, top 0.5s;
+}
+
+.popup > h1 {
+    margin: 0;
+    padding-top: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+.popup > h2 {
+    width: 80%;
+    margin: 0 10%;
+    text-align: center;
+    line-height: 2;
+}
+
+.popup > button {
+    margin-top: 2%;
+}
+
+.imgRow {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    transform: scale(0.5);
+}
+
+.imgRow > img{
+    padding: 0 2%;
+    border-radius: 5rem;
+}
+
+.imgRow > img:nth-child(1){
+    filter: grayscale(100%);
+    z-index: 2;
+}
+
+.imgRow > img:nth-child(2){
+    transform: scale(1.5);
+    z-index: 3;
+}
+
+.imgRow > img:nth-child(3){
+    filter: grayscale(100%);
+    z-index: 2;
+}
+  
+.open{
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    visibility: visible;
+}
+

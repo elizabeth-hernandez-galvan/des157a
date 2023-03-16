@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TriWizard</title>
+    <title>Final Version 1</title>
     <!-- link to normalize -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 
@@ -20,14 +20,9 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <iframe id="backgroundMusic" hidden src="audio/background.mp3" allow="autoplay" volume="0.1"></iframe>
-    
     <div class="showing" id="landing">
         <header>
             <h1>DO YOU HAVE WHAT IT TAKES TO BECOME A TRIWIZARD CHAMPION?</h1>
-
-            <!-- <audio src="audio/alone-darkness.mp3" controls loop autoplay></audio> -->
-            
             <div class="col-img">
                 <!-- <img class= "goblet" src="images/Goblet.png" alt=""> -->
                 <div class="btn">
@@ -72,14 +67,16 @@
         <section>
             <div id="players">
                 <div id="play1" class="player">
-                    <img src="images/AI_Gryffindor.jpg" alt="Gryffindor">
+                    <img id="player" src="images/AI_Gryffindor.jpg" alt="Gryffindor">
+                    <h2>Player 1: Gryffindor</h2>
                     <h3 id="score1" class="score">Score: 0</h3>
                 </div>
     
                 <div id="dice"></div>
     
                 <div id="play2" class="player">
-                    <img src="images/AI_dragon.jpg" alt="dragon">
+                    <img id="comp" src="images/AI_dragon.jpg" alt="dragon">
+                    <h2>Player 2: Computer</h2>
                     <h3 id="score2" class="score">Score: 0</h3>
                 </div>
             </div>
@@ -91,6 +88,29 @@
             <div id="score"></div>
         </section>
 
+        <div class="popup" id="popup1">
+            <h1>CONGRATULATIONS</h1>
+            <div class="imgRow">
+                <img src="images/AI_dragon.jpg" alt="dragon">
+                <img src="images/AI_Merperson.jpg" alt="merperson">
+                <img src="images/AI_Maze.jpg" alt="maze">
+            </div>
+            <h2>The dragon has been slayed. You have passed the first challenge! Next Challenge: Surviving the Hogwarts Lake.</h2>
+            <button id="continue1">Continue</button>
+        </div>
+
+        <div class="popup" id="popup2">
+            <h1>CONGRATULATIONS</h1>
+            <div class="imgRow">
+                <img src="images/AI_Merperson.jpg" alt="merperson">
+                <img src="images/AI_Maze.jpg" alt="maze">
+                <img src="images/AI_dragon.jpg" alt="dragon">
+            </div>
+            <h2>You survived the Hogwarts Lake. You have passed the second challenge! Next Challenge: Conquering the Labyrinth.</h2>
+            <button id="continue2">Continue</button>
+        </div>
+
     </div>
+
     </body>
 </html>

@@ -9,35 +9,42 @@
     const score = document.getElementById('score');
     const score1 = document.getElementById("score1");
     const score2 = document.getElementById("score2");
+    const player = document.getElementById("play1");
+    const computer = document.getElementById("play2");
     const actionArea = document.getElementById('actions');
     const dice = document.getElementById('dice');
     const modal = document.getElementById("myModal");
     const myBtn = document.getElementById("learn");
     const span = document.getElementsByClassName("close")[0];
-
-    //sounds
-    const diceSound = new Audio("audio/dice.mp3"); 
-    const turnOverSound = new Audio("audio/turnOver.mp3");
-    const winSound = new Audio("audio/fanfare.mp3");
-
+    const popUp1 = document.getElementById("popup1");
+    const popUp2 = document.getElementById("popup2");
     const gameData = {
             dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
-            players: ['Player 1', 'Player 2'],
+            players: ['Player 1', 'Player 2', 'Player 3', 'Player 4','Computer'],
             score: [0, 0],
             roll1: 0,
             roll2: 0,
             rollSum: 0,
             index: 0,
-            gameEnd: 29
+            task1: 9,
+            task2: 19,
+            task3: 29
         };
+    
+        const pics = [
+            'url"images/AI_Gryffindor.jpg")',
+            'url"images/AI_Maze.jpg")',
+            'url"images/AI_Merperson.jpg")',
+            'url"images/AI_Gryffindor.jpg")'
+        ];
 
-    let audio = new Audio({
-        loop: true,
-        volume:1,
-        src:['/audio/alone-darkness.mp3']
-    })
-
-    audio.play();
+        const pic = document.querySelector('#player');
+  
+        function showImage() {
+            let a = Math.floor(Math.random() * pics.length);
+            let img = pics[a];
+            pic.style.backgroundImage = img;
+        }
 
     const colors = ["red", "orange", "yellow", "lightgreen", "lightblue", "violet"];
 
@@ -99,11 +106,42 @@
                 modal.style.display = "none";
             }
         }
+
+        function choosePlayer() {
+            // Random Player Generator
+        }
         
-        //Game Start
+        // Function to Play Game (Start of play vs Computer)
+        const playGame = () => {
+        const fightBtn = document.querySelector('.rollagain');
+        const passBtn = document.querySelector('.pass');
+        // const playerOpt = [fightBtn,passBtn];
+        const computerOpt = ['fight','pass'];
+        
+            // Function to start playing game
+            playerOptions.forEach(option => {
+                option.addEventListener('click',function(){
+        
+                    const choiceNumber = Math.floor(Math.random()*2); //(2 chocies)
+                    const computerChoice = computerOpt[choiceNumber];
+        
+                    // Function to check who wins
+                    winner(this.innerText,computerChoice)
+                    
+                    // if(// Calling gameOver function){
+                
+                    // }
+                })
+            })
+        }
+        
+
         startGame.addEventListener('click', function() {
             document.querySelector("#landing").className = "hidden";
             gameControl.className = "showing";
+
+            showImage();
+
             //randomy set game index here
             gameData.index = Math.round(Math.random());
             console.log(`index: ${gameData.index}`);
@@ -118,7 +156,7 @@
 
         function setUpTurn() {
             game.className = "showing";
-            game.innerHTML = `<p class = "text">${gameData.players[gameData.index]}</p>`;
+            game.innerHTML = `<p class = "text">${gameData.players[gameData.index]}'s Turn</p>`;
             actionArea.innerHTML = '<button id = "roll"> Fight </button>';
 
             document.getElementById('roll').addEventListener("click", function(){
@@ -147,7 +185,7 @@
             //If Two 1's are rolled
             if (gameData.rollSum === 2) {
                 console.log("Snake eyes were rolled")
-                turnOverSound.play();
+                
                 game.innerHTML += '<p class = "text">Oh snap! Snake eyes!</p>';
                 gameData.score[gameData.index] = 0;
 
@@ -162,7 +200,7 @@
             //If either die is a 1
             } else if (gameData.roll1 === 1 || gameData.roll2 === 1){
                 console.log("One of the two dice was a 1")
-                turnOverSound.play();
+                
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
 
                 //Switch players
@@ -187,29 +225,87 @@
                     setUpTurn();
                 });
 
-                if(checkWinningCondition()) {
-                    winSound.play();
-                } else {
-                    diceSound.play();
-                }
+                checkWinningCondition();
             }
+
+            //Check Task
+            if(player === gameData.score[gameData.index] > gameData.task1){
+                console.log("PLAYER WINS")
+                showCurrentScore();
+
+                score.innerHTML += `<h2 class="winner">Good work, you win with ${gameData.score[gameData.index]} points!</h2>`;
+            
+                actionArea.innerHTML = '';
+                document.getElementById('quit').innerHTML = "Start a New Game?";
+            }
+            else if(computer == gameData.score[gameData.index] > gameData.task1){
+                console.log("COMPUTER WINS")
+                score.innerHTML += `<h2 class="winner">Sorry, the computer wins with ${gameData.score[gameData.index]} points!</h2>`;
+            
+                actionArea.innerHTML = '';
+                document.getElementById('quit').innerHTML = "Start a New Game?";
+        
+                }
         }
 
         //function to check for winner
-        function checkWinningCondition(){
-            if (gameData.score[gameData.index] > gameData.gameEnd) {
-
-                console.log("WIN")
+        function checkWinningCondition(player,computer){
+            if (gameData.score[gameData.index] > gameData.task1) {
+                console.log("Task1")
                 
                 showCurrentScore();
 
-                score.innerHTML += `<h2 class="winner">${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+                if(player === gameData.score[gameData.index] > gameData.task1){
+                    console.log("PLAYER WINS")
+                    showCurrentScore();
+
+                    score.innerHTML += `<h2 class="winner">Good work, you win with ${gameData.score[gameData.index]} points!</h2>`;
                 
-                actionArea.innerHTML = '';
-                document.getElementById('quit').innerHTML = "Start a New Game?";
+                    actionArea.innerHTML = '';
+                    document.getElementById('quit').innerHTML = "Start a New Game?";
+                }
+                else if(computer == gameData.score[gameData.index] > gameData.task1){
+                    console.log("COMPUTER WINS")
+                    score.innerHTML += `<h2 class="winner">Sorry, the computer wins with ${gameData.score[gameData.index]} points!</h2>`;
+                
+                    actionArea.innerHTML = '';
+                    document.getElementById('quit').innerHTML = "Start a New Game?";
+            
+                    }
+
+                // score.innerHTML += `<h2 class="winner">${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+                
+                // actionArea.innerHTML = '';
+                // document.getElementById('quit').innerHTML = "Start a New Game?";
+
+                openPopup1();
 
                 return true;
+            }else if (gameData.score[gameData.index] > gameData.task2) {
+                console.log("Task2")
+                
+                showCurrentScore();
 
+                if(player === gameData.score[gameData.index] > gameData.task2){
+                    console.log("PLAYER WINS")
+                    showCurrentScore();
+
+                    score.innerHTML += `<h2 class="winner">Good work, you win with ${gameData.score[gameData.index]} points!</h2>`;
+                
+                    actionArea.innerHTML = '';
+                }
+                else if(computer == gameData.score[gameData.index] > gameData.task2){
+                    console.log("COMPUTER WINS")
+                    score.innerHTML += `<h2 class="winner">Sorry, the computer wins with ${gameData.score[gameData.index]} points!</h2>`;
+                
+                    actionArea.innerHTML = '';
+                    document.getElementById('quit').innerHTML = "Start a New Game?";
+            
+                    }
+
+                openPopup2()
+
+                return true;
             } else {
                 showCurrentScore();
                 return false;
@@ -220,6 +316,36 @@
         function showCurrentScore(){
             score1.innerHTML = `Score: ${gameData.score[0]}`;
             score2.innerHTML = `Score: ${gameData.score[1]}`;
+        }
+
+        const cont1 = document.getElementById("continue1");
+        const cont2 = document.getElementById("continue2");
+        
+        cont1.onclick = function() {
+            closePopup1();
+        }
+        cont2.onclick = function() {
+            closePopup2();
+        }
+
+        //Turn on Overlay 1
+        function openPopup1() {
+            popUp1.classList.add("open")
+        }
+
+        function closePopup1() {
+            popUp1.classList.remove("open");
+            console.log("overlay off");
+        }
+
+        //Turn on Overlay 2
+        function openPopup2() {
+            popUp2.classList.add("open")
+        }
+    
+        function closePopup2() {
+            popUp2.classList.remove("open");
+            console.log("overlay off");
         }
 
 }())
