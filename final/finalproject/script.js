@@ -238,7 +238,7 @@
             });
 
             if(checkWinningCondition()) {
-                    winSound.play();
+                winSound.play();
             } else {
                 diceSound.play();
             }
@@ -291,7 +291,6 @@
         } 
         else if (gameData.score[gameData.index] >= gameData.task2 && gameData.score[gameData.index] < gameData.gameEnd && !flag2) {
             console.log("Task 2")
-            
             flag2 = 1;
             showCurrentScore();
             score.innerHTML += openPopup2();
