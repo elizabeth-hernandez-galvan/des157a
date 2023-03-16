@@ -18,6 +18,12 @@
     const span = document.getElementsByClassName("close")[0];
     const popUp1 = document.getElementById("popup1");
     const popUp2 = document.getElementById("popup2");
+
+    //sounds
+    const diceSound = new Audio("audio/dice.mp3"); 
+    const turnOverSound = new Audio("audio/turnOver.mp3");
+    const winSound = new Audio("audio/fanfare.mp3");
+    
     const gameData = {
             dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
             players: ['Player 1', 'Player 2', 'Player 3', 'Player 4','Computer'],
