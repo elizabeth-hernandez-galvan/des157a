@@ -267,7 +267,7 @@
                     
             return true;
         }
-        else if (gameData.score[gameData.index] > gameData.task1 && gameData.score[gameData.index] < gameData.task2 && !flag1) {
+        else if (gameData.score[gameData.index] >= gameData.task1 && gameData.score[gameData.index] < gameData.task2 && !flag1) {
             console.log("Task 1")
             flag1 = 1;
             showCurrentScore();
@@ -275,7 +275,7 @@
 
             return true;
         } 
-        else if (gameData.score[gameData.index] > gameData.task2 && gameData.score[gameData.index] < gameData.gameEnd && !flag2) {
+        else if (gameData.score[gameData.index] >= gameData.task2 && gameData.score[gameData.index] < gameData.gameEnd && !flag2) {
             console.log("Task 2")
             
             flag2 = 1;
