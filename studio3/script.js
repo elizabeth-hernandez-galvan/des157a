@@ -34,7 +34,7 @@
     let audio = new Audio({
         loop: true,
         volume:1,
-        src:['/audio/alone-darkness.mp3']
+        src:['/audio/background.mp3']
     })
 
     audio.play();
