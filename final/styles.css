@@ -20,14 +20,14 @@ dt{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    margin: 1%;
+    /* margin: 1%; */
 }
 
 .summary{
     margin: 0% 1%;
     background-color: white;
     border-radius: 5%;
-    padding-bottom: 2%;
+    padding-bottom: 1%;
 }
 
 .summary-2{
