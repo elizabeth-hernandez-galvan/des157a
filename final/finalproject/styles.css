@@ -5,6 +5,7 @@ body {
     font-family: 'EB Garamond', serif;
     height: 100vh;
     width: 100vw;
+    box-sizing: border-box;
 }
 
 .ball-bg {
@@ -27,18 +28,24 @@ body {
 }
   
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #fefefe;
     color: #000;
-    margin: 10% auto; /* 10% from the top and centered */
-    padding: 20px;
+    margin: 5% auto; /* 5% from the top and centered */
+    /* padding: 20px; */
     border: 1px solid #888;
     width: 80%;
 }
 
 .close {
+    position: absolute;
+    top: 12%;
+    right: 12%;
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    font-size: 50px;
     font-weight: bold;
 }
   
@@ -51,26 +58,34 @@ body {
 
 .instruct {
     text-align: left;
+    height: 80vh;
 }
 .instruct > h3 {
     text-align: center;
     font-size: 30px;
-    padding-bottom: 5px;
+    margin-bottom: 1%;
+    
 }
 
 .instruct > p {
+    margin-top: 0;
+    margin-bottom: 1%;
     line-height: 2;
-    font-size: 15px;
+    font-size: 18px;
+    max-width: 750px;
+    min-width: 100px;
 }
 
 .instruct > ol {
+    margin-top: 0;
+    margin-bottom: 1%;
     line-height: 2;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 ol > li::marker {
     font-weight: bold;
-    font-size: 17px;;
+    font-size: 19px;;
 }
 
 h1 {
@@ -202,7 +217,7 @@ button {
 
 #gamecontrol {
     background:rgba(255,255,255, 0.3);
-    height: 90%;
+    height: 90vh;
 }
   
 .popup{
@@ -280,5 +295,50 @@ button {
     padding: 1rem 2rem;
     font-size: 36px;
     margin: 0% 5%;
+}
+
+main{
+    min-height: calc(100vh + 50px);
+}
+
+#footer {
+    position: absolute;
+    background: white;
+    color: black;
+    bottom: 1;
+    width: 100%;
+}
+
+#footer:hover {
+    background: linear-gradient(230deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+.foot {
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+    
+.left{
+    margin-right: auto;
+    margin-left: 0;
+}
+  
+.right {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 0;
+}
+
+.right > a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.sign {
+    font-size: 20px;
 }
 
