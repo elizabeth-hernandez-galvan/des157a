@@ -10,7 +10,7 @@
     const score1 = document.getElementById("score1");
     const score2 = document.getElementById("score2");
     const player = document.getElementById("play1");
-    const computer = document.getElementById("play2");
+    const computer = document.getElementById("play2");  // Need to get computer to work
     const actionArea = document.getElementById('actions');
     const dice = document.getElementById('dice');
     const modal = document.getElementById("myModal");
