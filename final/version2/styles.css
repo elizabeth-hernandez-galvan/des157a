@@ -272,3 +272,50 @@ button {
     visibility: visible;
 }
 
+main{
+    min-height: calc(100vh + 50px);
+}
+
+#footer {
+    position: absolute;
+    background: white;
+    color: black;
+    bottom: 1;
+    width: 100%;
+}
+
+#footer:hover {
+    background: linear-gradient(230deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+.foot {
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+    
+.left{
+    margin-right: auto;
+    margin-left: 0;
+}
+  
+.right {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 0;
+}
+
+.right > a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.sign {
+    font-size: 20px;
+}
+
+
+

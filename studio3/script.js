@@ -51,7 +51,7 @@
             ball.style.background = colors[Math.floor(Math.random() * colors.length)];
             // Random Placement on screen
             ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
-            ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+            ball.style.top = `${Math.floor(Math.random() * 1)}vh`;
             // Gets random scale factor for each ball
             ball.style.transform = `scale(${Math.random()})`;
             ball.style.width = `${Math.random()}rem`;

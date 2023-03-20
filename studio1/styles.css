@@ -183,6 +183,50 @@ button {
     width: 25em; 
 }
 
+#footer {
+    position: absolute;
+    background: white;
+    color: black;
+    bottom: 1;
+    width: 100%;
+    border-top: 1px solid #000;
+}
+
+#footer:hover {
+    background: linear-gradient(230deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+.foot {
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+    
+.left{
+    margin-right: auto;
+    margin-left: 0;
+}
+  
+.right {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 0;
+}
+
+.right > a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.sign {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 480px) {
     .keyboard {
         display: flex;
