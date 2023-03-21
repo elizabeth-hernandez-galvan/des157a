@@ -364,19 +364,19 @@ main{
 }
 
 #option1{
-    background-color: red;
+    background: linear-gradient(180deg, #7F0909 0%, #7F0909 50%, #FFC500 100%);
 }
 
 #option2{
-    background-color: orange;
+    background: linear-gradient(180deg, #000000 0%, #000000 40%, #EEE117 100%);
 }
 
 #option3{
-    background-color: yellow;
+    background: linear-gradient(180deg, #000A90 0%, #000A90 40%, #946B2D 100%);
 }
 
 #option4{
-    background-color: green;
+    background: linear-gradient(180deg, #0D6217 0%, #0D6217 50%, #AAAAAA 100%);
 }
 
 .optText {
@@ -417,6 +417,11 @@ main{
 .option:hover .optImg img {
     max-width: 120%;
     max-height: 120%;
+}
+
+.option:hover .optText h2 {
+    color: black;
+    z-index: 1;
 }
 
 .option:hover {
