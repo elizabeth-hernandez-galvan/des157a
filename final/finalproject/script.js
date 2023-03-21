@@ -25,6 +25,7 @@
     const popUp1 = document.getElementById("popup1");
     const popUp2 = document.getElementById("popup2");
     const popUp3 = document.getElementById("popup3");
+    const popUp4 = document.getElementById("popup4");
 
     //Players
     const player = document.getElementById('player');
@@ -39,7 +40,6 @@
     const name = document.getElementById('name');
 
     // Initializing Play vs Computer
-    let computer = 0;
     let computerTimer;
 
     //sounds
@@ -132,6 +132,12 @@
         characters.className = "characters";
     });
 
+    document.getElementById('quit').addEventListener("click", function(){
+        location.reload();
+        gameControl.className = "hidden";
+    });
+
+
     character1.addEventListener('click', function() {
         characters.className = "hidden";
         gameControl.className = "showing";
@@ -141,15 +147,6 @@
 
         //randomy set game index here
         // gameData.index = Math.round(Math.random());
-        gameData.index = 0;
-        console.log(`index: ${gameData.index}`);
-
-        document.getElementById('quit').addEventListener("click", function(){
-            location.reload();
-            gameControl.className = "hidden";
-        });
-
-        computer = 1;
 
         console.log("set up the turn!");
         setUpTurn();
@@ -164,15 +161,6 @@
 
         //randomy set game index here
         // gameData.index = Math.round(Math.random());
-        gameData.index = 0;
-        console.log(`index: ${gameData.index}`);
-
-        document.getElementById('quit').addEventListener("click", function(){
-            location.reload();
-            gameControl.className = "hidden";
-        });
-
-        computer = 1;
 
         console.log("set up the turn!");
         setUpTurn();
@@ -187,15 +175,6 @@
 
         //randomy set game index here
         // gameData.index = Math.round(Math.random());
-        gameData.index = 0;
-        console.log(`index: ${gameData.index}`);
-
-        document.getElementById('quit').addEventListener("click", function(){
-            location.reload();
-            gameControl.className = "hidden";
-        });
-
-        computer = 1;
 
         console.log("set up the turn!");
         setUpTurn();
@@ -210,15 +189,6 @@
 
         //randomy set game index here
         // gameData.index = Math.round(Math.random());
-        gameData.index = 0;
-        console.log(`index: ${gameData.index}`);
-
-        document.getElementById('quit').addEventListener("click", function(){
-            location.reload();
-            gameControl.className = "hidden";
-        });
-
-        computer = 1;
 
         console.log("set up the turn!");
         setUpTurn();
@@ -227,12 +197,17 @@
     function setUpTurn() {
         game.className = "showing";
         game.innerHTML = `<p class = "text">${gameData.players[gameData.index]}'s Turn</p>`;
-        actionArea.innerHTML = '<button id = "roll"> Fight </button>';
 
-        document.getElementById('roll').addEventListener("click", function(){
-            // console.log("Roll the dice!"); 
+        if(!gameData.index){
+            actionArea.innerHTML = '<button id = "roll"> Fight </button>';
+
+            document.getElementById('roll').addEventListener("click", function(){
+                // console.log("Roll the dice!"); 
+                throwDice();
+            });
+        } else {
             throwDice();
-        });
+        }      
     };
 
     //function to throw dice
@@ -257,7 +232,7 @@
             console.log("Snake eyes were rolled")
             turnOverSound.play();
 
-            if(computer){
+            if(gameData.index){
                 game.innerHTML += '<p class = "text">Oh snap! computer rolled snake eyes! Switching to Player 1</p>';
             } else {
                 game.innerHTML += '<p class = "text">Oh snap! You rolled snake eyes! Switching to Computer</p>';
@@ -280,7 +255,7 @@
             console.log("One of the two dice was a 1")
             turnOverSound.play();
 
-            if(computer){
+            if(gameData.index){
                 game.innerHTML += '<p class = "text">Sorry, one of your rolls was a one, <br>switching to Player 1</p>';
             } else {
                 game.innerHTML += '<p class = "text">Sorry, one of your rolls was a one, <br>switching to Computer</p>';
@@ -297,18 +272,25 @@
             console.log("The game proceeds")
 
             gameData.score[gameData.index] += gameData.rollSum;
-            actionArea. innerHTML = '<button id = "rollagain">Fight</button> or <button id = "pass">Hide</button>'
-            /* 
-            */
+            // actionArea. innerHTML = '<button id = "rollagain">Fight</button> or <button id = "pass">Hide</button>'
 
-            document.getElementById('rollagain').addEventListener('click', function(){
-                throwDice();
-            });
-
-            document.getElementById('pass').addEventListener('click', function(){
-                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-                setUpTurn();
-            });
+            if(gameData.index){
+                // glenda changed from draw to throwDice
+                actionArea.innerHTML = '';
+                // glenda suggest message to say "fighting for computer" or animate the cards
+                computerTimer = setTimeout(throwDice, 2000);
+            } else {
+                actionArea.innerHTML = '<button id = "rollagain">Fight</button> or <button id = "pass">Hide</button>'
+                // glenda moved this code here
+                document.getElementById('rollagain').addEventListener('click', function(){
+                    throwDice();
+                });
+    
+                document.getElementById('pass').addEventListener('click', function(){
+                    gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+                    setUpTurn();
+                });
+            }
 
             if(checkWinningCondition()) {
                 winSound.play();
@@ -330,7 +312,13 @@
             // End Play vs Computer
             clearTimeout(computerTimer);
 
-            openPopup3();
+            if(gameData.index){
+                console.log("open losing popup")
+                openPopup4();
+            } else {
+                openPopup3();
+            }
+
             score.innerHTML += `<h2 class="winner">${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
                 
             actionArea.innerHTML = '';
@@ -342,7 +330,13 @@
             console.log("Task 1")
             flag1 = 1;
             showCurrentScore();
-            openPopup1();
+            
+            if(gameData.index){
+                console.log("open losing popup")
+                openPopup4();
+            } else {
+                openPopup1();
+            }
 
             return true;
         } 
@@ -350,7 +344,13 @@
             console.log("Task 2")
             flag2 = 1;
             showCurrentScore();
-            openPopup2();
+            
+            if(gameData.index){
+                console.log("open losing popup")
+                openPopup4();
+            } else {
+                openPopup2();
+            }
 
             return true;
         }
@@ -369,6 +369,7 @@
     const cont1 = document.getElementById("continue1");
     const cont2 = document.getElementById("continue2");
     const cont3 = document.getElementById("continue3");
+    const cont4 = document.getElementById("continue4");
     
     cont1.onclick = function() {
         closePopup1();
@@ -380,6 +381,11 @@
 
     cont3.onclick = function() {
         closePopup3();
+        window.location.reload();
+    }
+
+    cont4.onclick = function() {
+        closePopup4();
         window.location.reload();
     }
 
@@ -414,6 +420,16 @@
 
     function closePopup3() {
         popUp3.classList.remove("open");
+        console.log("overlay off");
+    }
+
+    //Turn on Overlay 4
+    function openPopup4() {
+        popUp4.classList.add("open")
+    }
+
+    function closePopup4() {
+        popUp4.classList.remove("open");
         console.log("overlay off");
     }
 
