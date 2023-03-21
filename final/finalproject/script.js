@@ -25,7 +25,9 @@
     const popUp1 = document.getElementById("popup1");
     const popUp2 = document.getElementById("popup2");
     const popUp3 = document.getElementById("popup3");
-    const popUp4 = document.getElementById("popup4");
+    const lose1 = document.getElementById("failed1");
+    const lose2 = document.getElementById("failed2");
+    const lose3 = document.getElementById("failed3");
 
     //Players
     const player = document.getElementById('player');
@@ -314,7 +316,7 @@
 
             if(gameData.index){
                 console.log("open losing popup")
-                openPopup4();
+                openlose3();
             } else {
                 openPopup3();
             }
@@ -333,7 +335,8 @@
             
             if(gameData.index){
                 console.log("open losing popup")
-                openPopup4();
+                openlose1();
+                clearTimeout(computerTimer);
             } else {
                 openPopup1();
             }
@@ -347,7 +350,8 @@
             
             if(gameData.index){
                 console.log("open losing popup")
-                openPopup4();
+                openlose2();
+                clearTimeout(computerTimer);
             } else {
                 openPopup2();
             }
@@ -369,7 +373,10 @@
     const cont1 = document.getElementById("continue1");
     const cont2 = document.getElementById("continue2");
     const cont3 = document.getElementById("continue3");
-    const cont4 = document.getElementById("continue4");
+
+    const again1 = document.getElementById("again1");
+    const again2 = document.getElementById("again2");
+    const again3 = document.getElementById("again3");
     
     cont1.onclick = function() {
         closePopup1();
@@ -384,8 +391,18 @@
         window.location.reload();
     }
 
-    cont4.onclick = function() {
-        closePopup4();
+    again1.onclick = function() {
+        closelose1();
+        window.location.reload();
+    }
+
+    again2.onclick = function() {
+        closelose2();
+        window.location.reload();
+    }
+
+    again3.onclick = function() {
+        closelose2();
         window.location.reload();
     }
 
@@ -423,13 +440,33 @@
         console.log("overlay off");
     }
 
-    //Turn on Overlay 4
-    function openPopup4() {
-        popUp4.classList.add("open")
+    //Turn on Overlay Try Again 1
+    function openlose1() {
+        lose1.classList.add("open")
     }
 
-    function closePopup4() {
-        popUp4.classList.remove("open");
+    function closelose1() {
+        lose1.classList.remove("open");
+        console.log("overlay off");
+    }
+
+    //Turn on Overlay Try Again 1
+    function openlose2() {
+        lose2.classList.add("open")
+    }
+
+    function closelose2() {
+        lose2.classList.remove("open");
+        console.log("overlay off");
+    }
+
+    //Turn on Overlay Try Again 1
+    function openlose3() {
+        lose3.classList.add("open")
+    }
+
+    function closelose3() {
+        lose3.classList.remove("open");
         console.log("overlay off");
     }
 

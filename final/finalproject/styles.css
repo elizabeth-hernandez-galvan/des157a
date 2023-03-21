@@ -244,8 +244,8 @@ button {
 }
 
 .popup > h2 {
-    width: 80%;
-    margin: 0 10%;
+    width: 90%;
+    margin: 0 5%;
     text-align: center;
     line-height: 2;
 }
@@ -280,6 +280,11 @@ button {
     filter: grayscale(100%);
     z-index: 2;
 }
+
+.winGif{
+    height: 280px;
+    width: auto;
+}
   
 .open{
     top: 50%;
@@ -287,7 +292,7 @@ button {
     visibility: visible;
 }
 
-#continue3, #continue4 {
+#continue1, #continue2, #continue3 {
     border: none;
     border-radius: 1rem;
     background-color: transparent;
@@ -295,6 +300,22 @@ button {
     padding: 1rem 2rem;
     font-size: 36px;
     margin: 0% 5%;
+    color: blue;
+}
+
+#again1, #again2, #again3 {
+    border: none;
+    border-radius: 1rem;
+    background-color: transparent;
+    width: 50%;
+    padding: 1rem 2rem;
+    font-size: 36px;
+    margin: 0% 5%;
+    color: red;
+}
+
+.red{
+    color: red;
 }
 
 main{

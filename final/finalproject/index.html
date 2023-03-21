@@ -206,8 +206,8 @@
                 <img src="images/AI_Merperson.jpg" alt="merperson">
                 <img src="images/AI_Maze.jpg" alt="maze">
             </div>
-            <h2>The dragon has been slayed. You have passed the first challenge! Next Challenge: Surviving the Hogwarts Lake.</h2>
-            <button id="continue1">Continue</button>
+            <h2>The dragon has been slayed. You have passed the first challenge!<br>Next Challenge: Surviving the Hogwarts Lake.</h2>
+            <button id="continue1">[Continue]</button>
         </div>
 
         <div class="popup" id="popup2">
@@ -217,27 +217,49 @@
                 <img src="images/AI_Maze.jpg" alt="maze">
                 <img src="images/AI_dragon.jpg" alt="dragon">
             </div>
-            <h2>You survived the Hogwarts Lake. You have passed the second challenge! Next Challenge: Conquering the Labyrinth.</h2>
-            <button id="continue2">Continue</button>
+            <h2>You survived the Hogwarts Lake. You have passed the second challenge!<br>Next Challenge: Conquering the Labyrinth.</h2>
+            <button id="continue2">[Continue]</button>
         </div>
 
         <div class="popup" id="popup3">
             <h1>CONGRATULATIONS</h1>
-            <img src="images/dumbledore.gif" alt="dumbledore">
+            <img class="winGif" src="images/dumbledore.gif" alt="dumbledore">
             <h2>Looks like you had enough courage, intelligence, resourcefulness, and magical ability to become a TRIWIZARD CHAMPION.</h2>
             <h3>Well . . . maybe it was just luck, play again to find out.</h3>
             <button id="continue3">[Accept Challenge]</button>
         </div>
 
-        <div class="popup" id="popup4">
-            <h1>LEVEL 1 Failed</h1>
+        <div class="popup" id="failed1">
+            <h1>LEVEL 1 FAILED</h1>
+            <div class="imgRow">
+                <img src="images/AI_Maze.jpg" alt="maze">
+                <img src="images/AI_dragon.jpg" alt="dragon">
+                <img src="images/AI_Merperson.jpg" alt="merperson">
+            </div>
+            <h2>You didn't Slay the Dragon, You lost the first challenge :(<br><span class="red">Note: You have to complete all challenges consecutively to continue.</span><br>Get 10pts before the dragon. Better luck next time.</h2>
+            <button id="again1">[Try Again]</button>
+        </div>
+
+        <div class="popup" id="failed2">
+            <h1>LEVEL 2 FAILED</h1>
             <div class="imgRow">
                 <img src="images/AI_dragon.jpg" alt="dragon">
                 <img src="images/AI_Merperson.jpg" alt="merperson">
                 <img src="images/AI_Maze.jpg" alt="maze">
             </div>
-            <h2>The dragon has not been slayed. You have lost the first challenge! Note: You have to complete all challenges to continue. Better luck next time.</h2>
-            <button id="continue4">[Try Again]</button>
+            <h2>You didn't Survive the Hogwarts Lake, You lost the second challenge :(<br><span class="red">Note: You have to complete all challenges consecutively to continue.</span><br>Get 20pts before the merperson. Better luck next time.</h2>
+            <button id="again2">[Try Again]</button>
+        </div>
+
+        <div class="popup" id="failed3">
+            <h1>LEVEL 3 FAILED</h1>
+            <div class="imgRow">
+                <img src="images/AI_Merperson.jpg" alt="merperson">
+                <img src="images/AI_Maze.jpg" alt="maze">
+                <img src="images/AI_dragon.jpg" alt="dragon">
+            </div>
+            <h2>You didn't Conquer the Labyrinth, You lost the second challenge :(<br><span class="red">Note: You have to complete all challenges consecutively to continue.</span><br>Get 30pts before the labyrinth. Better luck next time.</h2>
+            <button id="again3">[Try Again]</button>
         </div>
 
     </div>
