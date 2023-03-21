@@ -17,6 +17,13 @@
     const popUp1 = document.getElementById("popup1");
     const popUp2 = document.getElementById("popup2");
     const popUp3 = document.getElementById("popup3");
+
+    //Characters
+    const characters = document.getElementById('characters');
+    const character1 = document.getElementById('character1');
+    const character2 = document.getElementById('character2');
+    const character3 = document.getElementById('character3');
+    const character4 = document.getElementById('character4');
     
     // Initializing Play vs Computer
     let computer = 0;
@@ -123,6 +130,75 @@
 
     startGame.addEventListener('click', function() {
         document.querySelector("#landing").className = "hidden";
+        characters.className = "showing";
+        characters.className = "characters";
+    });
+
+    character1.addEventListener('click', function() {
+        characters.className = "hidden";
+        gameControl.className = "showing";
+
+        showImage();
+
+        //randomy set game index here
+        gameData.index = Math.round(Math.random());
+        console.log(`index: ${gameData.index}`);
+
+        document.getElementById('quit').addEventListener("click", function(){
+            location.reload();
+            gameControl.className = "hidden";
+        });
+
+        computer = 1;
+
+        console.log("set up the turn!");
+        setUpTurn();
+    });
+
+    character2.addEventListener('click', function() {
+        characters.className = "hidden";
+        gameControl.className = "showing";
+
+        showImage();
+
+        //randomy set game index here
+        gameData.index = Math.round(Math.random());
+        console.log(`index: ${gameData.index}`);
+
+        document.getElementById('quit').addEventListener("click", function(){
+            location.reload();
+            gameControl.className = "hidden";
+        });
+
+        computer = 1;
+
+        console.log("set up the turn!");
+        setUpTurn();
+    });
+
+    character3.addEventListener('click', function() {
+        characters.className = "hidden";
+        gameControl.className = "showing";
+
+        showImage();
+
+        //randomy set game index here
+        gameData.index = Math.round(Math.random());
+        console.log(`index: ${gameData.index}`);
+
+        document.getElementById('quit').addEventListener("click", function(){
+            location.reload();
+            gameControl.className = "hidden";
+        });
+
+        computer = 1;
+
+        console.log("set up the turn!");
+        setUpTurn();
+    });
+
+    character4.addEventListener('click', function() {
+        characters.className = "hidden";
         gameControl.className = "showing";
 
         showImage();
