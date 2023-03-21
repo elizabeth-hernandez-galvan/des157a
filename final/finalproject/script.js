@@ -9,8 +9,6 @@
     const score = document.getElementById('score');
     const score1 = document.getElementById("score1");
     const score2 = document.getElementById("score2");
-    const player = document.getElementById("play1");
-    const computer = document.getElementById("play2");  // Need to get computer to work
     const actionArea = document.getElementById('actions');
     const dice = document.getElementById('dice');
     const modal = document.getElementById("myModal");
@@ -20,6 +18,10 @@
     const popUp2 = document.getElementById("popup2");
     const popUp3 = document.getElementById("popup3");
     
+    // Initializing Play vs Computer
+    let computer = 0;
+    let computerTimer;
+
     //sounds
     const diceSound = new Audio("audio/dice.mp3"); 
     const turnOverSound = new Audio("audio/turnOver.mp3");
@@ -31,8 +33,10 @@
     
     const gameData = {
         dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
-        players: ['Player 1', 'Player 2', 'Player 3', 'Player 4','Computer'],
+        players: ['Player 1','Computer'],
         score: [0, 0],
+        score1: 0,
+        score2:0,
         roll1: 0,
         roll2: 0,
         rollSum: 0,
@@ -115,36 +119,7 @@
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
-
-    function choosePlayer() {
-        // Random Player Generator
-    }
-    
-    // Function to Play Game (Start of play vs Computer)
-    const playGame = () => {
-    const fightBtn = document.querySelector('.rollagain');
-    const passBtn = document.querySelector('.pass');
-    // const playerOpt = [fightBtn,passBtn];
-    const computerOpt = ['fight','pass'];
-        
-        // Function to start playing game
-        playerOptions.forEach(option => {
-            option.addEventListener('click',function(){
-
-                const choiceNumber = Math.floor(Math.random()*2); //(2 chocies)
-                const computerChoice = computerOpt[choiceNumber];
-
-                // Function to check who wins
-                winner(this.innerText,computerChoice)
-                
-                // if(// Calling gameOver function){
-            
-                // }
-            })
-        })
-    }
-        
+    }   
 
     startGame.addEventListener('click', function() {
         document.querySelector("#landing").className = "hidden";
@@ -160,6 +135,9 @@
             location.reload();
             gameControl.className = "hidden";
         });
+
+        computer = 1;
+
         console.log("set up the turn!");
         setUpTurn();
     });
@@ -197,7 +175,13 @@
             console.log("Snake eyes were rolled")
             turnOverSound.play();
 
-            game.innerHTML += '<p class = "text">Oh snap! Snake eyes!</p>';
+            if(computer){
+                game.innerHTML += '<p class = "text">Oh snap! computer rolled snake eyes! Switching to Player 1</p>';
+            } else {
+                game.innerHTML += '<p class = "text">Oh snap! You rolled snake eyes! Switching to Computer</p>';
+            }
+            
+            //Score Resets
             gameData.score[gameData.index] = 0;
 
             //Switch players
@@ -205,6 +189,7 @@
             
             //Show Current Score
             checkWinningCondition();
+
             // showCurrentScore();
             setTimeout(setUpTurn, 2000);
 
@@ -213,10 +198,14 @@
             console.log("One of the two dice was a 1")
             turnOverSound.play();
 
-            gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+            if(computer){
+                game.innerHTML += '<p class = "text">Sorry, one of your rolls was a one, <br>switching to Player 1</p>';
+            } else {
+                game.innerHTML += '<p class = "text">Sorry, one of your rolls was a one, <br>switching to Computer</p>';
+            }
 
             //Switch players
-            game.innerHTML = `<p class = "text">Sorry, one of your rolls was a one, <br>switching to ${gameData.players[gameData.index]}</p>`;
+            gameData.index ? (gameData.index = 0) : (gameData.index = 1);
 
             //Show Current Score
             setTimeout(setUpTurn, 2000);
@@ -243,25 +232,6 @@
                 diceSound.play();
             }
         }
-
-        //Check Task
-        if(player === gameData.score[gameData.index] > gameData.task1){
-            console.log("PLAYER WINS")
-            showCurrentScore();
-
-            score.innerHTML += `<h2 class="winner">Good work, you win with ${gameData.score[gameData.index]} points!</h2>`;
-        
-            actionArea.innerHTML = '';
-            document.getElementById('quit').innerHTML = "Start a New Game?";
-        }
-        else if(computer == gameData.score[gameData.index] > gameData.task1){
-            console.log("COMPUTER WINS")
-            score.innerHTML += `<h2 class="winner">Sorry, the computer wins with ${gameData.score[gameData.index]} points!</h2>`;
-        
-            actionArea.innerHTML = '';
-            document.getElementById('quit').innerHTML = "Start a New Game?";
-    
-        }
     }
 
         
@@ -273,7 +243,10 @@
             console.log("WIN")
             showCurrentScore();
 
-            score.innerHTML += openPopup3();
+            // End Play vs Computer
+            clearTimeout(computerTimer);
+
+            openPopup3();
             score.innerHTML += `<h2 class="winner">${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
                 
             actionArea.innerHTML = '';
@@ -285,7 +258,7 @@
             console.log("Task 1")
             flag1 = 1;
             showCurrentScore();
-            score.innerHTML += openPopup1();
+            openPopup1();
 
             return true;
         } 
@@ -293,7 +266,7 @@
             console.log("Task 2")
             flag2 = 1;
             showCurrentScore();
-            score.innerHTML += openPopup2();
+            openPopup2();
 
             return true;
         }
