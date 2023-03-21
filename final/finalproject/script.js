@@ -3,20 +3,32 @@
     "use strict";
     console.log("reading js");
 
+    //Game Features/Controls
     const startGame = document.getElementById('startgame');
     const gameControl = document.getElementById('gamecontrol');
     const game = document.getElementById('game');
+    const actionArea = document.getElementById('actions');
+    const dice = document.getElementById('dice');
+
+    //Score
     const score = document.getElementById('score');
     const score1 = document.getElementById("score1");
     const score2 = document.getElementById("score2");
-    const actionArea = document.getElementById('actions');
-    const dice = document.getElementById('dice');
+
+    //Instructions
     const modal = document.getElementById("myModal");
     const myBtn = document.getElementById("learn");
     const span = document.getElementsByClassName("close")[0];
+
+    //Tasks
+    const task = document.getElementById('task');
     const popUp1 = document.getElementById("popup1");
     const popUp2 = document.getElementById("popup2");
     const popUp3 = document.getElementById("popup3");
+
+    //Players
+    const player = document.getElementById('player');
+    const comp = document.getElementById('comp');
 
     //Characters
     const characters = document.getElementById('characters');
@@ -24,7 +36,8 @@
     const character2 = document.getElementById('character2');
     const character3 = document.getElementById('character3');
     const character4 = document.getElementById('character4');
-    
+    const name = document.getElementById('name');
+
     // Initializing Play vs Computer
     let computer = 0;
     let computerTimer;
@@ -52,21 +65,6 @@
         task2: 20,
         gameEnd: 30
     };
-    
-    const pics = [
-        'url"images/AI_Gryffindor.jpg")',
-        'url"images/AI_Maze.jpg")',
-        'url"images/AI_Merperson.jpg")',
-        'url"images/AI_Gryffindor.jpg")'
-    ];
-
-    const pic = document.querySelector('#player');
-
-    function showImage() {
-        let a = Math.floor(Math.random() * pics.length);
-        let img = pics[a];
-        pic.style.backgroundImage = img;
-    }
 
     const colors = ["red", "orange", "yellow", "lightgreen", "lightblue", "violet"];
     const numBalls = 300;
@@ -138,7 +136,8 @@
         characters.className = "hidden";
         gameControl.className = "showing";
 
-        showImage();
+        player.src = "images/AI_Gryffindor.jpg"
+        name.innerHTML = "Player 1: Gryffindor";
 
         //randomy set game index here
         gameData.index = Math.round(Math.random());
@@ -159,7 +158,8 @@
         characters.className = "hidden";
         gameControl.className = "showing";
 
-        showImage();
+        player.src = "images/AI_Hufflepuff.jpeg"
+        name.innerHTML = "Player 1: Hufflepuff";
 
         //randomy set game index here
         gameData.index = Math.round(Math.random());
@@ -180,7 +180,8 @@
         characters.className = "hidden";
         gameControl.className = "showing";
 
-        showImage();
+        player.src = "images/AI_Ravenclaw.jpg"
+        name.innerHTML = "Player 1: Ravenclaw";
 
         //randomy set game index here
         gameData.index = Math.round(Math.random());
@@ -201,7 +202,8 @@
         characters.className = "hidden";
         gameControl.className = "showing";
 
-        showImage();
+        player.src = "images/AI_Slytherin.jpg"
+        name.innerHTML = "Player 1: Slytherin";
 
         //randomy set game index here
         gameData.index = Math.round(Math.random());
@@ -382,6 +384,8 @@
 
     function closePopup1() {
         popUp1.classList.remove("open");
+        comp.src = "images/AI_Merperson.jpg"
+        task.innerHTML = "Survive the Hogwarts Lake";
         console.log("overlay off");
     }
 
@@ -392,6 +396,8 @@
 
     function closePopup2() {
         popUp2.classList.remove("open");
+        comp.src = "images/AI_Maze.jpg"
+        task.innerHTML = "Conquer the Labyrinth";
         console.log("overlay off");
     }
 

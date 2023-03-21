@@ -351,7 +351,7 @@ main{
 }
 
 .charText {
-    margin: 5% 5% 0% 5%;
+    margin: 2% 5% 0% 5%;
 }
 
 .option {
@@ -375,13 +375,14 @@ main{
 }
 
 #option4{
-    background: linear-gradient(180deg, #0D6217 0%, #0D6217 50%, #AAAAAA 100%);
+    background: linear-gradient(180deg, #0D6217 0%, #0D6217 20%, #AAAAAA 100%);
 }
 
 .optText {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 5%;
 }
 
 .optText h2 {
@@ -391,9 +392,26 @@ main{
 
 .optText p {
     color: black;
+    margin: 0 0 0 0;
+    padding-left: 10%;
+    align-self: flex-start;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 90%;
     font-size: 1.1em;
-    line-height: 20px;
-    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+}
+
+.optText ul {
+    color: white;
+    display: block;
+    list-style-type: "\01FA84";
+    margin: 0 0 0 0;
+    padding-left: 15%;
+    align-self: flex-start;
+    font-size: 1.1em;
+    line-height: 2;
+    font-weight: bold;
 }
 
 .optImg {
@@ -411,6 +429,7 @@ main{
     max-width: 95%;
     max-height: 95%;
     transition: max-width 0.4s, max-height 0.4s;
+    padding-top: 2%;
 }
 
 .option:hover .optImg img {
