@@ -140,7 +140,8 @@
         name.innerHTML = "Player 1: Gryffindor";
 
         //randomy set game index here
-        gameData.index = Math.round(Math.random());
+        // gameData.index = Math.round(Math.random());
+        gameData.index = 0;
         console.log(`index: ${gameData.index}`);
 
         document.getElementById('quit').addEventListener("click", function(){
@@ -162,7 +163,8 @@
         name.innerHTML = "Player 1: Hufflepuff";
 
         //randomy set game index here
-        gameData.index = Math.round(Math.random());
+        // gameData.index = Math.round(Math.random());
+        gameData.index = 0;
         console.log(`index: ${gameData.index}`);
 
         document.getElementById('quit').addEventListener("click", function(){
@@ -184,7 +186,8 @@
         name.innerHTML = "Player 1: Ravenclaw";
 
         //randomy set game index here
-        gameData.index = Math.round(Math.random());
+        // gameData.index = Math.round(Math.random());
+        gameData.index = 0;
         console.log(`index: ${gameData.index}`);
 
         document.getElementById('quit').addEventListener("click", function(){
@@ -206,7 +209,8 @@
         name.innerHTML = "Player 1: Slytherin";
 
         //randomy set game index here
-        gameData.index = Math.round(Math.random());
+        // gameData.index = Math.round(Math.random());
+        gameData.index = 0;
         console.log(`index: ${gameData.index}`);
 
         document.getElementById('quit').addEventListener("click", function(){
@@ -294,6 +298,8 @@
 
             gameData.score[gameData.index] += gameData.rollSum;
             actionArea. innerHTML = '<button id = "rollagain">Fight</button> or <button id = "pass">Hide</button>'
+            /* 
+            */
 
             document.getElementById('rollagain').addEventListener('click', function(){
                 throwDice();
