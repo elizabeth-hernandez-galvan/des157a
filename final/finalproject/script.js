@@ -295,7 +295,11 @@
             }
 
             if(checkWinningCondition()) {
-                winSound.play();
+                if(gameData.index){
+                    turnOverSound.play();
+                } else {
+                    winSound.play();
+                }
             } else {
                 diceSound.play();
             }
