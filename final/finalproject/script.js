@@ -8,7 +8,7 @@
     const gameControl = document.getElementById('gamecontrol');
     const game = document.getElementById('game');
     const actionArea = document.getElementById('actions');
-    const dice = document.getElementById('dice');
+    const card = document.getElementById('card');
 
     //Score
     const score = document.getElementById('score');
@@ -216,15 +216,16 @@
     function throwDice(){
 
         actionArea.innerHTML = '';
-        dice.innerHTML = "";
+        card.innerHTML = "";
 
         //Get random values for 1 to 6 for the score
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
 
         //put the dice images on the screen (the dice array index needs to be one less than roll1 and roll2)
-        dice.innerHTML += `<img class="dice" src="${gameData.dice[gameData.roll1 - 1]}">
-        <img class="dice" src="${gameData.dice[gameData.roll2 - 1]}">`;
+        card.innerHTML += `<img class="front" src="${gameData.dice[gameData.roll1 - 1]}"> <img class="front" src="${gameData.dice[gameData.roll2 - 1]}">`;
+
+        card.innerHTML += `<img class="back" src="images/Back.png" alt="design"><img class="back" src="images/Back.png" alt="design">`;
 
         gameData.rollSum = gameData.roll1 + gameData.roll2;
         console.log(`Score: ${gameData.rollSum}`);
@@ -372,6 +373,14 @@
     function showCurrentScore(){
         score1.innerHTML = `Score: ${gameData.score[0]}`;
         score2.innerHTML = `Score: ${gameData.score[1]}`;
+    }
+
+    //function to flip card
+    back.addEventListener("click", flipCard);
+    front.addEventListener("click", flipCard);
+    function flipCard(){
+        back.classList.toggle("flipCardBack");
+        front.classList.toggle("flipCardFront");
     }
 
     const cont1 = document.getElementById("continue1");
