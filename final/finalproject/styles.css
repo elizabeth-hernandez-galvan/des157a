@@ -579,3 +579,224 @@ main{
 .selector button:hover {
     opacity: 0.8;
 }
+
+
+/* Design For Laptop */
+@media screen and (max-width: 1024px)  and (min-width: 769px) {
+
+}
+
+/* Design For Tablet */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+
+}
+
+/* Design For Mobile Landscape view Only */
+@media only screen and (min-width: 320px) and (max-width: 640px) and (orientation: landscape) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    img {
+        border-radius: 1rem;
+    }
+
+    header > h1 {
+        font-size: 2rem;
+    }
+
+    #header-top > button {
+        font-size: 0.5rem;
+        width: 4rem;
+        margin: 3% 0 0 3%;
+    }
+
+    button {
+        border: none;
+        border-radius: 0.5rem;
+        width: 22%;
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+        margin: 0% 5%;
+        text-align: center;
+    }
+
+    .instruct {
+        height: 110vh;
+    }
+
+    .instruct > h3 {
+        font-size: 20px;
+    }
+
+    .instruct > p {
+        line-height: 1.5;
+        font-size: 12px;
+        max-width: 440px;
+        min-width: 320px;
+        margin-left: 3%;
+    }
+
+    .instruct > ol {
+        line-height: 1.5;
+        font-size: 12px;
+    }
+
+    ol > li::marker {
+        font-size: 13px;
+    }
+
+    .close {
+        font-size: 35px;
+    }
+
+    .option {
+        position: relative;
+        width: 100px;
+        margin: 1em;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .optText h2 {
+        font-size: .8em;
+        margin: 4px auto 6px;
+    }
+
+    .optText p {
+        font-size: .7em;
+        line-height: 1;
+    }
+
+    .optText ul {
+        font-size: .6em;
+        line-height: 1.5;
+    }
+
+    .selector button {
+        padding: 6px 10px;
+        transform: translateY(-35%);
+        border-radius: 20px;
+        font-size: .8em;
+    }
+
+    #footer {
+        bottom: -30rem;
+        width: 100%;
+    }
+
+    .player > img {
+        width: 100px;
+    }
+
+    #card1Back, #card2Back, #card1Front, #card2Front{
+        width: 100px;
+    }
+
+    .popup > h1 {
+        margin: 0;
+        padding-top: 3%;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .popup > h2 {
+        width: 95%;
+        margin: 0 2.5%;
+        line-height: 1.7;
+        font-size: 0.8rem;
+    }
+
+    #popup3 > h3 {
+        line-height: 1;
+        font-size: 0.7rem;
+    }
+
+    #failed1 > h1, #failed2 > h1, #failed3 > h1 {
+        font-size: 1.4rem;
+    }
+
+    #failed1 > h2, #failed2 > h2, #failed3 > h2 {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    #continue1, #continue2, #continue3 {
+        padding: 1% 0 0 0;
+        font-size: 20px;
+        margin: 0% 5%;
+    }
+
+    #again1, #again2, #again3 {
+        padding: 1% 0 0 0;
+        font-size: 20px;
+        margin: 0% 5%;
+    }
+
+    .imgRow > img {
+        width: 150px;
+        border-radius: 2rem;
+    }
+
+    .task {
+        font-size: 2rem;
+    }
+
+    .player > h2 {
+        font-size: 0.7rem;
+    }
+
+    .player > h3 {
+        font-size: 1.5rem;
+    }
+
+    .playText{
+        font-size: 1rem;
+    }
+
+    .cards {
+        width: 250px;
+        height: 120px;
+        gap: 10px;
+        margin-top: 2%;
+    }
+
+    .card {
+        width: 125px;
+        height: 120px;
+    }
+
+    .front {
+        width: 100px;
+        height: 120px;
+    }
+
+    .back {
+        width: 100px;
+        height: 120px;
+    }
+
+    #actions > button {
+        font-size: 1rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .text{
+        font-size: 0.8rem;
+    }
+
+    .winner{
+        font-size: 1rem;
+    }
+
+    .compText{
+        font-size: 1.2rem;
+    }
+
+    .winGif {
+        height: 120px;
+        width: auto;
+        margin-top: 1%;
+    }
+}
