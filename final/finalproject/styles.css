@@ -583,12 +583,456 @@ main{
 
 /* Design For Laptop */
 @media screen and (max-width: 1024px)  and (min-width: 769px) {
+    h1 {
+        font-size: 4rem;
+    }
 
+    .charText {
+        margin: 8% 5% 0% 5%;
+    }
+
+    img {
+        border-radius: 1rem;
+    }
+
+    header > h1 {
+        font-size: 4rem;
+    }
+
+    #header-top > button {
+        font-size: 1rem;
+        width: 7rem;
+        margin: 3% 0 0 5%;
+    }
+
+    button {
+        border: none;
+        border-radius: 0.5rem;
+        width: 30%;
+        padding: 0.5rem 1rem;
+        font-size: 36px;
+        margin: 0% 5%;
+        text-align: center;
+    }
+
+    .instruct {
+        height: 80vh;
+    }
+
+    .instruct > h3 {
+        font-size: 30px;
+        padding-bottom: 1%;
+    }
+
+    .instruct > p {
+        line-height: 1.5;
+        font-size: 19px;
+        max-width: 740px;
+        min-width: 650px;
+        margin-left: 3%;
+    }
+
+    .instruct > ol {
+        line-height: 1.5;
+        font-size: 19px;
+    }
+
+    ol > li::marker {
+        font-size: 20px;
+    }
+
+    .close {
+        font-size: 50px;
+    }
+
+    .option {
+        width: 150px;
+        height: 370px;
+        margin: 1.2em;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .optText h2 {
+        font-size: 1.3em;
+        margin: 4px auto 6px;
+    }
+
+    .optText p {
+        font-size: 1em;
+        line-height: 1.7;
+    }
+
+    .optText ul {
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+
+    .selector {
+        height: 400px;
+    }
+
+    .selector button {
+        padding: 6px 10px;
+        transform: translateY(-75%);
+        border-radius: 20px;
+        font-size: .8em;
+    }
+
+    .player > img {
+        width: 200px;
+    }
+
+    #card1Back, #card2Back, #card1Front, #card2Front{
+        width: 150px;
+    }
+
+    .popup {
+        height: 90%;
+    }
+
+    .popup > h1 {
+        margin: 0;
+        padding-top: 2%;
+        width: 100%;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .popup > h2 {
+        width: 95%;
+        margin: 0 2.5%;
+        line-height: 2;
+        font-size: 1.5rem;
+    }
+
+    #popup3 > h3 {
+        line-height: 1;
+        font-size: 1.2rem;
+    }
+
+    #failed1 > h1, #failed2 > h1, #failed3 > h1 {
+        font-size: 2.9rem;
+    }
+
+    #failed1 > h2, #failed2 > h2, #failed3 > h2 {
+        font-size: 1.4rem;
+        line-height: 1.6;
+    }
+
+    #continue1, #continue2, #continue3 {
+        padding: 3% 0 0 0;
+        font-size: 35px;
+        margin: 0% 5%;
+    }
+
+    #again1, #again2, #again3 {
+        padding: 2% 0 0 0;
+        font-size: 35px;
+        margin: 0% 5%;
+    }
+
+    .imgRow > img {
+        width: 300px;
+        border-radius: 2rem;
+    }
+
+    .task {
+        font-size: 3rem;
+        padding-top: 3%;
+    }
+
+    .player > h2 {
+        font-size: 1.5rem;
+    }
+
+    .player > h3 {
+        font-size: 2.5rem;
+    }
+
+    .playText{
+        font-size: 1.5rem;
+    }
+
+    .cards {
+        width: 350px;
+        height: 250px;
+        gap: 10px;
+        margin-top: 5%;
+    }
+
+    .card {
+        width: 175px;
+        height: 200px;
+    }
+
+    .front {
+        width: 150px;
+        height: 200px;
+    }
+
+    .back {
+        width: 150px;
+        height: 200px;
+    }
+
+    #actions > button {
+        font-size: 1.5rem;
+        padding: 0.5rem 0.5rem;
+    }
+
+    .text{
+        font-size: 1.5rem;
+    }
+
+    .winner{
+        font-size: 1.5rem;
+    }
+
+    .compText{
+        font-size: 1.7rem;
+    }
+
+    .winGif {
+        height: 250px;
+        width: auto;
+        margin-top: 1%;
+    }
 }
 
 /* Design For Tablet */
 @media screen and (max-width: 768px) and (min-width: 481px) {
+    h1 {
+        font-size: 3rem;
+    }
 
+    .charText {
+        margin: 8% 5% 0% 5%;
+    }
+
+    img {
+        border-radius: 1rem;
+    }
+
+    header > h1 {
+        font-size: 3rem;
+    }
+
+    #header-top > button {
+        font-size: 0.8rem;
+        width: 7rem;
+        margin: 3% 0 0 5%;
+    }
+
+    button {
+        border: none;
+        border-radius: 0.5rem;
+        width: 30%;
+        padding: 0.5rem 1rem;
+        font-size: 26px;
+        margin: 0% 5%;
+        text-align: center;
+    }
+
+    .instruct {
+        height: 90vh;
+    }
+
+    .instruct > h3 {
+        font-size: 22px;
+        padding-bottom: 1%;
+    }
+
+    .instruct > p {
+        line-height: 1.6;
+        font-size: 16px;
+        max-width: 600px;
+        min-width: 300px;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .instruct > ol {
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+    ol > li::marker {
+        font-size: 17px;
+    }
+
+    .close {
+        font-size: 50px;
+        top: 6%;
+        right: 12%;
+    }
+    
+    .charText {
+        margin: 2% 5% 0% 5%;
+        font-size: 3rem;
+    }
+    .option {
+        width: 200px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+
+    .optText h2 {
+        font-size: 1.2em;
+        margin: 4px auto 6px;
+    }
+
+    .optText p {
+        font-size: 0.9em;
+        line-height: 1.7;
+    }
+
+    .optText ul {
+        font-size: 0.9em;
+        line-height: 1.7;
+    }
+
+    .selector {
+        height: 480px;
+    }
+
+    .selector button {
+        padding: 6px 10px;
+        transform: translateY(-75%);
+        border-radius: 20px;
+        font-size: .8em;
+    }
+
+    #footer {
+        bottom: -45rem;
+        width: 100%;
+    }
+
+    .player > img {
+        width: 125px;
+    }
+
+    #card1Back, #card2Back, #card1Front, #card2Front{
+        width: 100px;
+    }
+
+    .popup {
+        height: 90%;
+    }
+
+    .popup > h1 {
+        margin: 0;
+        padding-top: 2%;
+        width: 100%;
+        text-align: center;
+        font-size: 2.7rem;
+    }
+
+    .popup > h2 {
+        width: 95%;
+        margin: 0 2.5%;
+        line-height: 1.6;
+        font-size: 1.5rem;
+    }
+
+    #popup3 > h2 {
+        width: 100%;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    #popup3 > h3 {
+        line-height: 1;
+        font-size: 1.2rem;
+    }
+
+    #failed1 > h1, #failed2 > h1, #failed3 > h1 {
+        font-size: 2.5rem;
+    }
+
+    #failed1 > h2, #failed2 > h2, #failed3 > h2 {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    #continue1, #continue2, #continue3 {
+        padding: 3% 0 0 0;
+        font-size: 25px;
+        margin: 0% 5%;
+    }
+
+    #again1, #again2, #again3 {
+        padding: 2% 0 0 0;
+        font-size: 25px;
+        margin: 0% 5%;
+    }
+
+    .imgRow > img {
+        width: 250px;
+        border-radius: 2rem;
+    }
+
+    .task {
+        font-size: 3rem;
+        padding-top: 6%;
+    }
+
+    .player > h2 {
+        font-size: 1.5rem;
+    }
+
+    .player > h3 {
+        font-size: 2.5rem;
+    }
+
+    .playText{
+        font-size: 1.5rem;
+    }
+
+    .cards {
+        width: 280px;
+        height: 150px;
+        gap: 10px;
+        margin-top: 5%;
+    }
+
+    .card {
+        width: 120px;
+        height: 150px;
+    }
+
+    .front {
+        width: 100px;
+        height: 150px;
+    }
+
+    .back {
+        width: 100px;
+        height: 150px;
+    }
+
+    #actions > button {
+        font-size: 1.5rem;
+        padding: 0.5rem 0.5rem;
+    }
+
+    .text{
+        font-size: 1.4rem;
+    }
+
+    .winner{
+        font-size: 1.5rem;
+    }
+
+    .compText{
+        font-size: 1.5rem;
+    }
+
+    .winGif {
+        height: 200px;
+        width: auto;
+        margin-top: 2%;
+    }
 }
 
 /* Design For Mobile Landscape view Only */
