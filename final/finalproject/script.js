@@ -8,7 +8,6 @@
     const gameControl = document.getElementById('gamecontrol');
     const game = document.getElementById('game');
     const actionArea = document.getElementById('actions');
-    const card = document.getElementById('card');
 
     //Cards Images
     const card1Front = document.querySelector('#card1Front');
@@ -255,10 +254,14 @@
 
             document.getElementById('roll').addEventListener("click", function(){
                 // console.log("Roll the dice!"); 
+                player.classList.add("select");
+                comp.classList.remove("select");
                 cardAnimation();
                 throwDice();
             });
         } else {
+            player.classList.remove("select");
+            comp.classList.add("select");
             throwDice();
         }      
     };
@@ -326,7 +329,7 @@
             console.log("The game proceeds")
 
             gameData.score[gameData.index] += gameData.rollSum;
-            // actionArea. innerHTML = '<button id = "rollagain">Fight</button> or <button id = "pass">Hide</button>'
+            // actionArea. innerHTML = '<button id = "rollagain">Fight</button> <button id = "pass">Hide</button>'
 
             if(gameData.index){
                 // glenda changed from draw to throwDice
@@ -336,7 +339,7 @@
                 cardAnimation();
                 computerTimer = setTimeout(throwDice, 2000);
             } else {
-                actionArea.innerHTML = '<button id = "rollagain">Fight</button> or <button id = "pass">Hide</button>'
+                actionArea.innerHTML = '<button id = "rollagain">Fight</button> <button id = "pass">Hide</button>'
                 // glenda moved this code here
                 document.getElementById('rollagain').addEventListener('click', function(){
                     cardAnimation();
