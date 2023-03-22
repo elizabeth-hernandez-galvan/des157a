@@ -291,6 +291,10 @@ button {
     transition: transform 0.5s, top 0.5s;
 }
 
+.popLose {
+    background-color: firebrick;
+}
+
 .popup > h1 {
     margin: 0;
     padding-top: 2%;
@@ -355,7 +359,7 @@ button {
     padding: 1rem 2rem;
     font-size: 36px;
     margin: 0% 5%;
-    color: blue;
+    color: darkcyan;
 }
 
 #again1, #again2, #again3 {
@@ -366,11 +370,11 @@ button {
     padding: 1rem 2rem;
     font-size: 36px;
     margin: 0% 5%;
-    color: red;
+    color: whitesmoke;
 }
 
-.red{
-    color: red;
+.tint{
+    color: whitesmoke;
 }
 
 main{
