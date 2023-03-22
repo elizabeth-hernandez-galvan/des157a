@@ -10,6 +10,18 @@
     const actionArea = document.getElementById('actions');
     const card = document.getElementById('card');
 
+    //Cards Images
+    const card1Front = document.querySelector('#card1Front');
+    // const card1Back = document.querySelector('#card1Back');
+    const card2Front = document.querySelector('#card2Front');
+    // const card2Back = document.querySelector('#card2Back');
+
+    //Cards
+    const front1 = document.querySelector('#front1');
+    const back1 = document.querySelector('#back1');
+    const front2 = document.querySelector('#front2');
+    const back2 = document.querySelector('#back2');
+
     //Score
     const score = document.getElementById('score');
     const score1 = document.getElementById("score1");
@@ -52,6 +64,10 @@
     //Overlay Stop on each task
     let flag1 = 0;
     let flag2 = 0;
+    
+    //Animation
+    let firstTime = true; // so that first animation does not have to wait for timeout
+    let roll1, roll2;
     
     const gameData = {
         dice: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png"],
@@ -111,6 +127,40 @@
         }
         );
     });
+
+    function cardAnimation() {
+
+        if (firstTime) {
+            flipFront();
+        } else {
+            // flip to the card back
+            setTimeout(flipBack, 500);
+
+            function flipBack() {
+                back1.classList.remove('flipCardBack');
+                back2.classList.remove('flipCardBack');
+                front1.classList.remove('flipCardFront');
+                front2.classList.remove('flipCardFront');
+
+                // set timer then flip to card front
+                setTimeout(flipFront, 500);
+            }
+        }
+
+        function flipFront() {
+            firstTime = false;
+            // update card fronts
+            roll1 = Math.floor(Math.random() * 6) + 1;
+            roll2 = Math.floor(Math.random() * 6) + 1;
+            card1Front.src = gameData.dice[roll1 - 1];
+            card2Front.src = gameData.dice[roll2 - 1];
+            // transform
+            back1.classList.add('flipCardBack');
+            back2.classList.add('flipCardBack');
+            front1.classList.add('flipCardFront');
+            front2.classList.add('flipCardFront');
+        }
+    }
 
     myBtn.onclick = function() {
         modal.style.display = "block";
@@ -198,13 +248,14 @@
 
     function setUpTurn() {
         game.className = "showing";
-        game.innerHTML = `<p class = "text">${gameData.players[gameData.index]}'s Turn</p>`;
+        game.innerHTML = `<p class = "playText">${gameData.players[gameData.index]}'s Turn</p>`;
 
         if(!gameData.index){
             actionArea.innerHTML = '<button id = "roll"> Fight </button>';
 
             document.getElementById('roll').addEventListener("click", function(){
                 // console.log("Roll the dice!"); 
+                cardAnimation();
                 throwDice();
             });
         } else {
@@ -216,16 +267,16 @@
     function throwDice(){
 
         actionArea.innerHTML = '';
-        card.innerHTML = "";
+        front1.innerHTML = '';
+        front2.innerHTML = '';
 
         //Get random values for 1 to 6 for the score
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
 
         //put the dice images on the screen (the dice array index needs to be one less than roll1 and roll2)
-        card.innerHTML += `<img class="front" src="${gameData.dice[gameData.roll1 - 1]}"> <img class="front" src="${gameData.dice[gameData.roll2 - 1]}">`;
-
-        card.innerHTML += `<img class="back" src="images/Back.png" alt="design"><img class="back" src="images/Back.png" alt="design">`;
+        front1.innerHTML += `<img id="card1Front" src="${gameData.dice[gameData.roll1 - 1]}">`;
+        front2.innerHTML += `<img id="card2Front"" src="${gameData.dice[gameData.roll2 - 1]}">`;
 
         gameData.rollSum = gameData.roll1 + gameData.roll2;
         console.log(`Score: ${gameData.rollSum}`);
@@ -279,13 +330,16 @@
 
             if(gameData.index){
                 // glenda changed from draw to throwDice
-                actionArea.innerHTML = '';
+                // actionArea.innerHTML = '';
+                actionArea.innerHTML = '<p class = "compText">. . . Computer Fighting . . .</p>';
                 // glenda suggest message to say "fighting for computer" or animate the cards
+                cardAnimation();
                 computerTimer = setTimeout(throwDice, 2000);
             } else {
                 actionArea.innerHTML = '<button id = "rollagain">Fight</button> or <button id = "pass">Hide</button>'
                 // glenda moved this code here
                 document.getElementById('rollagain').addEventListener('click', function(){
+                    cardAnimation();
                     throwDice();
                 });
     
@@ -375,14 +429,8 @@
         score2.innerHTML = `Score: ${gameData.score[1]}`;
     }
 
-    //function to flip card
-    back.addEventListener("click", flipCard);
-    front.addEventListener("click", flipCard);
-    function flipCard(){
-        back.classList.toggle("flipCardBack");
-        front.classList.toggle("flipCardFront");
-    }
-
+    
+    //Overlays
     const cont1 = document.getElementById("continue1");
     const cont2 = document.getElementById("continue2");
     const cont3 = document.getElementById("continue3");

@@ -177,62 +177,73 @@ button {
     font-size: 2rem;
     font-weight: bold;
     font-style: italic;
+    color: beige;
 }
 
-#dice{
+.playText{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.compText{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    color: lightgrey;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.cards {
     display: flex;
-    justify-content: space-between;
-    transform: scale(0.9);
-    margin: 1%;
-    padding: 50px;
-}
-
-#dice > img{
-    padding: 0 2%;
+    justify-content: center;
+    width: 470px;
+    height: 250px;
+    gap: 20px;
 }
 
 .card {
     position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    /* transform: scale(0.9); */
+    width: 198px;
+    height: 242px;
     transform-style: preserve-3d;
-    transition: all  0.8s ease;
-    /* margin: 1%; */
+    perspective: 1000px;
+    transition: all 0.8s ease;
 }
 
-.card > img{
-    margin: 0 2%;
+.front {
+    /* position: absolute; */
+    width: 198px;
+    height: 242px;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    border-radius: 2rem;
+    transition: all 0.8s ease;
 }
 
 .back {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 198px;
+    height: 242px;
     backface-visibility: hidden;
-    background-color: #e73c7e;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transform: rotateY(0deg);
+    opacity: 1;
     border-radius: 2rem;
-}
-
-.front {
-    position: absolute;
-    /* width: 100%; */
-    backface-visibility: hidden;
-    background-color: #23d5ab;
-    color: #000;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transform: rotateY(-180deg);
-    border-radius: 2rem;
-}
-
-.flipCardBack {
-    transform: rotateY(180deg);
+    transition: all 0.8s ease;
 }
 
 .flipCardFront {
     transform: rotateY(0deg);
+}
+
+.flipCardBack {
+    transform: rotateY(180deg);
 }
 
 .score {
