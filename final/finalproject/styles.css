@@ -8,6 +8,35 @@ body {
     box-sizing: border-box;
 }
 
+/* #unmute{
+    display: block;
+    font-size: 1rem;
+    width: 4rem;
+    padding: 0.5rem 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3% 3% 0 0;
+    border: solid 2px white;
+    border-radius: 1rem;
+    background-color: transparent;
+    color: white;
+} */
+
+#mute{
+    font-size: 1rem;
+    width: 4rem;
+    padding: 0.5rem 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3% 3% 0 0;
+    border: solid 2px white;
+    border-radius: 1rem;
+    background-color: transparent;
+    color: white;
+}
+
 img {
     border-radius: 2rem;
 }
@@ -312,7 +341,7 @@ button {
 }
 
 .popLose {
-    background-color: firebrick;
+    background-color: brown;
 }
 
 .popup > h1 {
@@ -405,7 +434,7 @@ main{
     position: absolute;
     background: white;
     color: black;
-    bottom: 1;
+    bottom: -30%;
     width: 100%;
 }
 
@@ -460,6 +489,8 @@ main{
     margin: 1.5em;
     box-shadow: 0 15px 30px -10px white;
     cursor: pointer;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 #option1{

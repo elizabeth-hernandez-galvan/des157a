@@ -59,6 +59,8 @@
     const diceSound = new Audio("audio/dice.mp3"); 
     const turnOverSound = new Audio("audio/turnOver.mp3");
     const winSound = new Audio("audio/fanfare.mp3");
+    const background = new Audio("audio/background.mp3");
+    const icon = document.getElementById("icon");
 
     //Overlay Stop on each task
     let flag1 = 0;
@@ -83,6 +85,20 @@
         gameEnd: 30
     };
 
+    // Background Music
+    document.addEventListener('click', musicPlay);
+    function musicPlay() {
+        background.play();
+        document.removeEventListener('click', musicPlay);
+    }
+
+    //Click on Mute
+    /*const mute = document.getElementById('unmute');
+    mute.onclick = function() {
+        // In Progress
+    };
+    */
+   
     const colors = ["red", "orange", "yellow", "lightgreen", "lightblue", "violet"];
     const numBalls = 300;
     const balls = [];
@@ -337,6 +353,7 @@
                 actionArea.innerHTML = '<p class = "compText">. . . Computer Fighting . . .</p>';
                 // glenda suggest message to say "fighting for computer" or animate the cards
                 cardAnimation();
+                diceSound.play();
                 computerTimer = setTimeout(throwDice, 2000);
             } else {
                 actionArea.innerHTML = '<button id = "rollagain">Fight</button> <button id = "pass">Hide</button>'
@@ -344,6 +361,7 @@
                 document.getElementById('rollagain').addEventListener('click', function(){
                     cardAnimation();
                     throwDice();
+                    diceSound.play();
                 });
     
                 document.getElementById('pass').addEventListener('click', function(){
