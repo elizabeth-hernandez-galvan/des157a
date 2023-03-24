@@ -80,9 +80,9 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        task1: 10,
-        task2: 20,
-        gameEnd: 30
+        task1: 15,
+        task2: 30,
+        gameEnd: 50
     };
 
     // Background Music
